@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Spectrum Creations — Admin</title>
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="mark">SC</div>
+        <div>
+          <div class="name" id="sidebarSiteName">Spectrum Creations</div>
+          <div class="sub">Admin panel</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="sidebarNav"></nav>
+      <div class="sidebar-foot">
+        <div class="avatar" id="avatarInitial">–</div>
+        <div class="who">
+          <div class="n" id="whoName">—</div>
+          <div class="r" id="whoRole">—</div>
+        </div>
+        <button class="icon-btn" id="logoutBtn" title="Sign out"></button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-toggle" id="menuToggle"></button>
+        <h1 id="topbarTitle">Dashboard</h1>
+        <div class="topbar-right">
+          <a href="#notifications" class="icon-btn" title="Notifications" style="position:relative"></a>
+        </div>
+      </header>
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/pages/dashboard.js"></script>
+  <script src="assets/js/pages/catalog.js"></script>
+  <script src="assets/js/pages/sales.js"></script>
+  <script src="assets/js/pages/content.js"></script>
+  <script src="assets/js/pages/reports.js"></script>
+  <script src="assets/js/pages/system.js"></script>
+  <script>
+    // Icon buttons that need JS-driven icons (kept out of the static
+    // shell above so app.js's icon() helper is the single source).
+    document.getElementById('logoutBtn').innerHTML = icon('logout', 16);
+    document.getElementById('menuToggle').innerHTML = icon('menu', 18);
+    document.querySelector('.topbar-right a').innerHTML = icon('bell', 18) + '<span class="count warn" data-unread-badge style="position:absolute;top:-4px;right:-4px;display:none"></span>';
+  </script>
+</body>
+</html>

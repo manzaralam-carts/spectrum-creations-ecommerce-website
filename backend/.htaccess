@@ -1,0 +1,33 @@
+# Block direct HTTP access to files that should never be fetched
+# by the browser (schema.sql, README.md) — PHP scripts can still
+# read config.php internally regardless of this file.
+#
+# Written to work on both Apache 2.2 and 2.4+. IMPORTANT: if your
+# host returns a 500 error for the WHOLE backend/ folder after
+# uploading this file, delete this .htaccess — it means your host's
+# Apache config doesn't support one of these directives, and a
+# broken .htaccess blocks every PHP file in this folder, not just
+# the ones listed below.
+
+<FilesMatch "\.(sql|md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Shared PHP files under api/ (prefixed with _) are include-only —
+# require_once still works internally, this just blocks someone
+# hitting them directly over HTTP.
+<FilesMatch "^_.*\.php$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

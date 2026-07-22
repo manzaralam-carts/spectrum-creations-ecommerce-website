@@ -1,0 +1,2914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Spectrum Creations — Art by Neurodiverse Artists</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description"
+    content="Spectrum Creations — Handmade art and crafts by individuals on the autism spectrum.">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR  -->
+  <header id="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Spectrum Creations — Home">
+        <img src="images/main-logo.png" alt="" decoding="async">
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#popular-Spectrum_Creationss">Popular</a></li>
+          <li class="has-dropdown">
+            <a href="#featured-Spectrum_Creationss">Collections <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#plasterOfParis">Plaster of Paris</a></li>
+              <li><a href="#moneyJars">Money Jars</a></li>
+              <li><a href="#paperClay">Paper Clay</a></li>
+              <li><a href="#jewellery">Jewellery</a></li>
+              <li><a href="#toteBags">Tote Bags</a></li>
+              <li><a href="#tShirts">T-Shirts</a></li>
+              <li><a href="#canvasArt">Canvas Art</a></li>
+              <li><a href="#wallHangings">Wall Hangings</a></li>
+              <li><a href="#lifestyleAccessories">Lifestyle Accessories</a></li>
+              <li><a href="#culinary">Culinary</a></li>
+              <li><a href="#electronics">Electronics</a></li>
+            </ul>
+          </li>
+          <li><a href="#special-offer">Offers</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="wishlist-btn" onclick="toggleWishlist()" aria-label="Wishlist">
+          <i class="bi bi-heart"></i>
+          <span class="wishlist-count" id="wishCount">0</span>
+        </button>
+        <button class="cart-btn" onclick="toggleCart()" aria-label="Cart">
+          <i class="bi bi-bag"></i>
+          <span class="cart-count" id="count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!--  CART DRAWER  -->
+  <div class="cart-drawer" id="drawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag</h3>
+      <button class="cart-close" onclick="toggleCart()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="cart-items" id="items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong>PKR <span id="total">0</span></strong></div>
+      <button class="btn-checkout" onclick="checkout()">Checkout <i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!--  WISHLIST DRAWER  -->
+  <div class="cart-drawer wishlist-drawer" id="wishDrawer">
+    <div class="cart-drawer-header">
+      <h3><i class="bi bi-heart-fill"></i> My Wishlist</h3>
+      <button class="cart-close" onclick="toggleWishlist()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="cart-items" id="wishItems"></div>
+  </div>
+
+  <!--  HERO / BILLBOARD  -->
+  <section id="billboard">
+    <div class="hero-container">
+      <button class="slider-btn prev" aria-label="Previous"><i class="icon icon-arrow-left"></i></button>
+
+      <div class="main-slider pattern-overlay">
+
+        <div class="slider-item">
+          <div class="hero-text">
+            <span class="hero-label">Neurodiverse Art</span>
+            <h1 class="hero-title">Welcome to<br>Spectrum<br><em>Creations</em></h1>
+            <p>Discover one-of-a-kind handmade creations crafted by individuals on the autism spectrum. Every product
+              tells a story of creativity, patience, and passion.</p>
+            <a href="#featured-Spectrum_Creationss" class="btn-hero">Explore Collection <i
+                class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="hero-image-wrap">
+            <img src="images/main-banner1.jpg" alt="Spectrum Creations Art" class="hero-img banner-image">
+            <div class="hero-badge">
+              <span class="badge-number">100%</span>
+              <span class="badge-text">Handmade</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item">
+          <div class="hero-text">
+            <span class="hero-label">Our Collections</span>
+            <h1 class="hero-title">Unique<br>Handmade<br><em>Treasures</em></h1>
+            <p>Paintings · Jewellery · Home Decor · Tote Bags · Canvas Art — each piece crafted with love and care.</p>
+            <a href="#featured-Spectrum_Creationss" class="btn-hero">Shop Now <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="hero-image-wrap">
+            <img src="images/main-banner2.jpg" alt="Handmade Collections" class="hero-img banner-image">
+            <div class="hero-badge">
+              <span class="badge-number">50+</span>
+              <span class="badge-text">Products</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slider-btn next" aria-label="Next"><i class="icon icon-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!--  POPULAR ITEMS  -->
+  <section id="popular-Spectrum_Creationss">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Trending Now</span>
+        <h2 class="section-title"><span>Popular</span> Items</h2>
+      </div>
+
+      <div class="popular-grid">
+
+        <div class="pop-card" data-id="1">
+          <figure class="product-style">
+            <img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg" alt="POP on Canvas" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>POP on Canvas</h4>
+            <div class="item-price">PKR 399</div>
+          </figcaption>
+        </div>
+
+        <div class="pop-card" data-id="2">
+          <figure class="product-style">
+            <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" alt="Geometric Pots" class="product-item">
+            <button class="card-add-btn" onclick="add(2)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Geometric Pots</h4>
+            <div class="item-price">PKR 249</div>
+          </figcaption>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  BEST SELLING  -->
+  <section id="best-selling">
+    <div class="container">
+      <div class="best-selling-grid">
+        <div class="best-img-wrap" data-id="3" role="button" tabindex="0" aria-label="View product images">
+          <img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Artistic Bottle">
+        </div>
+        <div class="best-content">
+          <span class="section-label">Best Seller</span>
+          <h2 class="section-title text-start"><span>Best</span> Selling Item</h2>
+          <p class="author-tag">Artistic Bottle</p>
+          <h3>Creativity at Your Home</h3>
+          <p>Bring creativity into your home with our beautifully handcrafted Artistic Bottle. Designed by a talented
+            autistic artist, each piece is unique — blending color, texture, and imagination to create a stunning
+            decorative accent.</p>
+          <button class="btn-primary-sc" onclick="add(3)">Add to Bag <i class="bi bi-bag-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-box delivery-box">
+
+      <h3>Delivery Information</h3>
+
+      <form id="deliveryForm" novalidate onsubmit="return false;">
+        <div class="delivery-grid">
+
+          <div class="delivery-col">
+            <div class="d-field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your first and last name"
+                     minlength="3" maxlength="60" autocomplete="name" required
+                     aria-describedby="err-name">
+              <span class="d-error" id="err-name"></span>
+            </div>
+
+            <div class="d-field">
+              <label for="mobile">Phone Number</label>
+              <input type="tel" id="mobile" name="mobile" inputmode="numeric"
+                     placeholder="03XXXXXXXXX" maxlength="11" autocomplete="tel" required
+                     aria-describedby="err-mobile">
+              <span class="d-error" id="err-mobile"></span>
+            </div>
+
+            <div class="d-field">
+              <label for="addr1">Building / House No / Floor / Street</label>
+              <input type="text" id="addr1" name="addr1" placeholder="Please enter"
+                     minlength="3" maxlength="100" autocomplete="address-line1" required
+                     aria-describedby="err-addr1">
+              <span class="d-error" id="err-addr1"></span>
+            </div>
+
+            <div class="d-field">
+              <label for="addr2">Colony / Suburb / Locality / Landmark</label>
+              <input type="text" id="addr2" name="addr2" placeholder="Please enter"
+                     maxlength="100" autocomplete="address-line2"
+                     aria-describedby="err-addr2">
+              <span class="d-error" id="err-addr2"></span>
+            </div>
+          </div>
+
+          <div class="delivery-col">
+            <div class="d-field">
+              <label for="province">Province</label>
+              <select id="province" name="province" onchange="onProvinceChange()" required aria-describedby="err-province">
+                <option value="">Loading provinces…</option>
+              </select>
+              <span class="d-error" id="err-province"></span>
+            </div>
+
+            <div class="d-field">
+              <label for="city">City</label>
+              <select id="city" name="city" onchange="onCityChange()" disabled required aria-describedby="err-city">
+                <option value="">Please choose your province first</option>
+              </select>
+              <span class="d-error" id="err-city"></span>
+            </div>
+
+            <div class="d-field">
+              <label for="area">Area</label>
+              <select id="area" name="area" onchange="onAreaSelectChange()" disabled required aria-describedby="err-area">
+                <option value="">Please choose your city first</option>
+              </select>
+              <input type="text" id="areaManual" name="areaManual" class="d-area-manual"
+                     placeholder="Type your area / locality" minlength="2" maxlength="80"
+                     autocomplete="address-level4" style="display:none;">
+              <span class="d-error" id="err-area"></span>
+            </div>
+
+            <div class="d-field">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="For Example: House# 123, Street# 123, ABC Road"
+                     minlength="8" maxlength="200" autocomplete="street-address" required
+                     aria-describedby="err-address">
+              <span class="d-error" id="err-address"></span>
+            </div>
+
+            <div class="d-field d-tag-field">
+              <p class="d-tag-title">Select a label for effective delivery:</p>
+              <div class="d-tag-group">
+                <button type="button" class="d-tag" data-tag="office" onclick="selectAddressTag('office')">
+                  <i class="bi bi-building"></i> OFFICE
+                </button>
+                <button type="button" class="d-tag" data-tag="home" onclick="selectAddressTag('home')">
+                  <i class="bi bi-house-door-fill"></i> HOME
+                </button>
+              </div>
+              <span class="d-error" id="err-tag"></span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="d-field d-payment-field">
+          <p class="d-tag-title">Payment method:</p>
+          <div class="d-payment-group">
+            <button type="button" class="d-payment-option active" data-method="cod" onclick="selectPaymentMethod('cod')">
+              <i class="bi bi-cash-coin"></i>
+              <span class="d-payment-option-label">Cash on Delivery (COD)</span>
+              <span class="d-payment-option-sub">Pay in cash when your order arrives</span>
+              <i class="bi bi-check-circle-fill d-payment-check"></i>
+            </button>
+          </div>
+          <span class="d-error" id="err-payment"></span>
+        </div>
+
+        <div class="delivery-actions">
+          <button type="submit" class="d-save-btn" id="deliverySaveBtn" onclick="placeOrder()">SAVE &amp; PLACE ORDER</button>
+          <button type="button" class="d-cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- PRODUCT QUICK VIEW (multi-image gallery) -->
+  <div class="modal product-modal" id="productModal" aria-hidden="true">
+    <div class="product-modal-box" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+      <button class="pm-close" type="button" onclick="closeProductModal()" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="pm-grid">
+        <div class="pm-gallery">
+          <div class="pm-main" id="pmMainWrap" role="button" tabindex="0"
+            aria-label="Main product photo. Activate to show additional views.">
+            <img id="pmMainImg" src="" alt="" />
+          </div>
+          <p class="pm-gallery-hint" id="pmGalleryHint">Click the image to show more views</p>
+          <div class="pm-extra-thumbs pm-extra-thumbs-hidden" id="pmExtraThumbs"
+            aria-label="Additional product images"></div>
+        </div>
+
+        <div class="pm-info">
+          <span class="pm-badge">Handmade • Unique</span>
+          <h3 id="pmTitle">Product</h3>
+          <p id="pmDesc" class="pm-desc">Handmade with love by neurodiverse creators.</p>
+          <div class="pm-price" id="pmPrice"></div>
+          <div class="stock-badge" id="pmStock"></div>
+
+          <div class="pm-actions">
+            <button class="pm-add" id="pmAddBtn" type="button">
+              Add to Bag <i class="bi bi-bag-plus"></i>
+            </button>
+            <button class="pm-wish" id="pmWishBtn" type="button" aria-label="Add to wishlist">
+              <i class="bi bi-heart"></i>
+            </button>
+            <button class="pm-secondary" type="button" onclick="closeProductModal()">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  FEATURED COLLECTIONS  -->
+  <section id="featured-Spectrum_Creationss">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Some quality items</span>
+        <h2 class="section-title"><span>Featured</span> Collections</h2>
+      </div>
+
+      <div class="fc-search-bar" role="search">
+        <div class="fc-search-field">
+          <i class="bi bi-search"></i>
+          <input type="text" id="fcSearchInput" placeholder="Search by product or category…"
+                 aria-label="Search products or categories">
+        </div>
+        <div class="fc-price-field">
+          <span class="fc-price-label">PKR</span>
+          <input type="number" id="fcPriceMin" placeholder="Min" min="0" inputmode="numeric"
+                 aria-label="Minimum price">
+          <span class="fc-price-sep">–</span>
+          <input type="number" id="fcPriceMax" placeholder="Max" min="0" inputmode="numeric"
+                 aria-label="Maximum price">
+        </div>
+        <button type="button" class="fc-search-clear" id="fcSearchClear">
+          <i class="bi bi-x-lg"></i> Clear
+        </button>
+      </div>
+      <p class="fc-search-empty" id="fcSearchEmpty">No products match your search.</p>
+
+      <ul class="tabs">
+        <li data-tab-target="#allCollections" class="active tab">All</li>
+        <li data-tab-target="#plasterOfParis" class="tab">Plaster of Paris</li>
+        <li data-tab-target="#moneyJars" class="tab">Money Jars</li>
+        <li data-tab-target="#paperClay" class="tab">Paper Clay</li>
+        <li data-tab-target="#jewellery" class="tab">Jewellery</li>
+        <li data-tab-target="#toteBags" class="tab">Tote Bags</li>
+        <li data-tab-target="#tShirts" class="tab">T-Shirts</li>
+        <li data-tab-target="#canvasArt" class="tab">Canvas Art</li>
+        <li data-tab-target="#wallHangings" class="tab">Wall Hangings</li>
+        <li data-tab-target="#lifestyleAccessories" class="tab">Lifestyle</li>
+        <li data-tab-target="#culinary" class="tab">Culinary</li>
+        <li data-tab-target="#electronics" class="tab">Electronics</li>
+      </ul>
+
+      <div class="tab-content">
+
+        <!-- All Collections -->
+        <div id="allCollections" data-tab-content class="active">
+          <div class="products-grid">
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="2264135953">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Flower Stand.jpg" alt="Flower Stand" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Flower Stand</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="3121388019">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Geometric Pots (1).jpg" alt="Geometric Pots"
+                  class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Geometric Pots</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 400</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="3340541469">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Geometric Pot with Tray.jpg" alt="Geometric Pot with Tray"
+                  class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Geometric Pot with Tray</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="3145776821">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Plaster of Paris Tray.jpg" alt="POP Tray" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP Tray</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 280</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="2267427224">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" alt="Geometric Pots 2"
+                  class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Geometric Pots II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 249</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="2184463611">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/POP Bookends.jpg" alt="POP Bookends" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP Bookends</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="3034836700">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/POP on Canvas (1).jpg" alt="POP Canvas 1" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP on Canvas I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Plaster of Paris" data-id="2812726886">
+              <figure class="product-style">
+                <img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg" alt="POP Canvas 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP on Canvas II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Money Jars" data-id="690986267">
+              <figure class="product-style">
+                <img src="images/Money Jar/Macrame Thread Money Jar.jpg" alt="Money Jar" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Macrame Money Jar</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="2207399754">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Bottle Vase" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Bottle Flower Vase I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 600</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="67241150">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Bottle Flower Vase (2).jpg" alt="Bottle Vase 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Bottle Flower Vase II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 620</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="4068036378">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Bottle Flower Vase (3).jpg" alt="Bottle Vase 3" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Bottle Flower Vase III</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 640</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="1822927444">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Lamp (1).jpg" alt="Decorative Lamp" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Lamp I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 420</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="3416674006">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Lamp (2).jpg" alt="Decorative Lamp 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Lamp II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 430</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="1939913336">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Lamp (3).jpg" alt="Decorative Lamp 3" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Lamp III</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 400</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Paper Clay" data-id="1614744005">
+              <figure class="product-style">
+                <img src="images/Paper Clay/Decorative Pen.jpg" alt="Decorative Pen" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Decorative Pen</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 250</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Jewellery" data-id="4034284375">
+              <figure class="product-style">
+                <img src="images/Jewellery/Wooden Jewellery.jpg" alt="Wooden Jewellery" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Wooden Jewellery</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Tote Bags" data-id="1585908517">
+              <figure class="product-style">
+                <img src="images/Tote Bags/Calligraphy Tote Bag.jpg" alt="Tote Bag" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Calligraphy Tote Bag</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 450</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Canvas Art" data-id="370165409">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Art Canvas (1).jpg" alt="Canvas Art" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Art Canvas I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 500</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Canvas Art" data-id="4173755019">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Art Canvas (2).jpg" alt="Canvas Art 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Art Canvas II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 520</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Canvas Art" data-id="2193744728">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Embroided Canvas (1).jpg" alt="Embroidered Canvas" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Embroidered Canvas I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 480</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Canvas Art" data-id="337384524">
+              <figure class="product-style">
+                <img src="images/Canvas Arts/Embroided Canvas (2).jpg" alt="Embroidered Canvas 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Embroidered Canvas II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 490</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Wall Hangings" data-id="1537409183">
+              <figure class="product-style">
+                <img src="images/Wall Hangings/Air-Clay Wall Hanging.jpg" alt="Wall Hanging" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Air-Clay Wall Hanging</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 300</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Lifestyle Accessories" data-id="1548448044">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Mug (1).jpg" alt="Mug" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Printed Mug I</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Lifestyle Accessories" data-id="3536935638">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Mug (2).jpg" alt="Mug 2" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Printed Mug II</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 380</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Lifestyle Accessories" data-id="2749733593">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Mug (3).jpg" alt="Mug 3" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Printed Mug III</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 799</div>
+              </figcaption>
+            </div>
+
+            <div class="product-card" data-category="Lifestyle Accessories" data-id="1547236079">
+              <figure class="product-style">
+                <img src="images/Lifestyle Accessories/Sleepers.jpg" alt="Sleepers" class="product-item">
+                <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>Sleepers</h4>
+                <span>Handmade with love by neurodiverse creators.</span>
+                <div class="item-price">PKR 600</div>
+              </figcaption>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Plaster of Paris -->
+        <div id="plasterOfParis" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="2264135953">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Flower Stand.jpg" alt="Flower Stand"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Flower Stand</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="3121388019">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Geometric Pots (1).jpg"
+                  alt="Geometric Pots" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>Geometric Pots</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 400</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="3340541469">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Geometric Pot with Tray.jpg"
+                  alt="Pot with Tray" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>Geometric Pot with Tray</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="3145776821">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Plaster of Paris Tray.jpg"
+                  alt="POP Tray" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+              </figure>
+              <figcaption>
+                <h4>POP Tray</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 280</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="2267427224">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg"
+                  alt="Geometric Pots 2" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>Geometric Pots II</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 249</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="2184463611">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/POP Bookends.jpg" alt="POP Bookends"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>POP Bookends</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="3034836700">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/POP on Canvas (1).jpg"
+                  alt="POP Canvas 1" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>POP on Canvas I</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="2812726886">
+              <figure class="product-style"><img src="images/POP (Plaster Of Paris)/POP on Canvas (2).jpg"
+                  alt="POP Canvas 2" class="product-item"><button class="card-add-btn" onclick="add(1)">Add to
+                  Bag</button></figure>
+              <figcaption>
+                <h4>POP on Canvas II</h4><span>Unique POP art.</span>
+                <div class="item-price">PKR 399</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Money Jars -->
+        <div id="moneyJars" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="690986267">
+              <figure class="product-style"><img src="images/Money Jar/Macrame Thread Money Jar.jpg" alt="Money Jar"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Macrame Money Jar</h4><span>Unique handmade jar.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paper Clay -->
+        <div id="paperClay" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="2207399754">
+              <figure class="product-style"><img src="images/Paper Clay/Bottle Flower Vase (1).jpg" alt="Vase 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Bottle Flower Vase I</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 600</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="67241150">
+              <figure class="product-style"><img src="images/Paper Clay/Bottle Flower Vase (2).jpg" alt="Vase 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Bottle Flower Vase II</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 620</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="4068036378">
+              <figure class="product-style"><img src="images/Paper Clay/Bottle Flower Vase (3).jpg" alt="Vase 3"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Bottle Flower Vase III</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 640</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="1822927444">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Lamp (1).jpg" alt="Lamp 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Lamp I</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 420</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="3416674006">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Lamp (2).jpg" alt="Lamp 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Lamp II</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 430</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="1939913336">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Lamp (3).jpg" alt="Lamp 3"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Lamp III</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 400</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="1614744005">
+              <figure class="product-style"><img src="images/Paper Clay/Decorative Pen.jpg" alt="Decorative Pen"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Decorative Pen</h4><span>Paper clay art.</span>
+                <div class="item-price">PKR 250</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jewellery -->
+        <div id="jewellery" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="4034284375">
+              <figure class="product-style"><img src="images/Jewellery/Wooden Jewellery.jpg" alt="Wooden Jewellery"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Wooden Jewellery</h4><span>Handcrafted jewellery.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tote Bags -->
+        <div id="toteBags" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="1585908517">
+              <figure class="product-style"><img src="images/Tote Bags/Calligraphy Tote Bag.jpg" alt="Tote Bag"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Calligraphy Tote Bag</h4><span>Handmade tote bag.</span>
+                <div class="item-price">PKR 450</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- T-Shirts -->
+        <div id="tShirts" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="4218312665">
+              <figure class="product-style"><img src="images/T-Shirts/" alt="T-Shirts" class="product-item"><button
+                  class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed T-Shirts</h4><span>Unique handmade prints.</span>
+                <div class="item-price">PKR 550</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas Art -->
+        <div id="canvasArt" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="370165409">
+              <figure class="product-style"><img src="images/Canvas Arts/Art Canvas (1).jpg" alt="Canvas 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Art Canvas I</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR 500</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="4173755019">
+              <figure class="product-style"><img src="images/Canvas Arts/Art Canvas (2).jpg" alt="Canvas 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Art Canvas II</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR 520</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="2193744728">
+              <figure class="product-style"><img src="images/Canvas Arts/Embroided Canvas (1).jpg" alt="Embroided 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Embroidered Canvas I</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR 480</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="337384524">
+              <figure class="product-style"><img src="images/Canvas Arts/Embroided Canvas (2).jpg" alt="Embroided 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Embroidered Canvas II</h4><span>Original canvas art.</span>
+                <div class="item-price">PKR 490</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wall Hangings -->
+        <div id="wallHangings" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="1537409183">
+              <figure class="product-style"><img src="images/Wall Hangings/Air-Clay Wall Hanging.jpg" alt="Wall Hanging"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Air-Clay Wall Hanging</h4><span>Unique wall art.</span>
+                <div class="item-price">PKR 300</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lifestyle Accessories -->
+        <div id="lifestyleAccessories" data-tab-content>
+          <div class="products-grid">
+            <div class="product-card" data-id="1548448044">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Mug (1).jpg" alt="Mug 1"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed Mug I</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR 350</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="3536935638">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Mug (2).jpg" alt="Mug 2"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed Mug II</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR 380</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="2749733593">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Mug (3).jpg" alt="Mug 3"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Printed Mug III</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR 799</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="353948553">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Sepian.jpg" alt="Sepian"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Sepian</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR 450</div>
+              </figcaption>
+            </div>
+            <div class="product-card" data-id="1547236079">
+              <figure class="product-style"><img src="images/Lifestyle Accessories/Sleepers.jpg" alt="Sleepers"
+                  class="product-item"><button class="card-add-btn" onclick="add(1)">Add to Bag</button></figure>
+              <figcaption>
+                <h4>Sleepers</h4><span>Lifestyle accessory.</span>
+                <div class="item-price">PKR 600</div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <!-- Culinary / Electronics (empty placeholders) -->
+        <div id="culinary" data-tab-content>
+          <div class="products-grid">
+            <p style="padding:40px;color:#999;">Coming Soon</p>
+          </div>
+        </div>
+        <div id="electronics" data-tab-content>
+          <div class="products-grid">
+            <p style="padding:40px;color:#999;">Coming Soon</p>
+          </div>
+        </div>
+
+      </div><!-- /tab-content -->
+    </div>
+  </section>
+
+  <!--  SPECIAL OFFERS  -->
+  <section id="special-offer">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Grab your opportunity</span>
+        <h2 class="section-title"><span>Items</span> with Offer</h2>
+      </div>
+      <div class="offers-grid">
+
+        <div class="offer-card" data-id="2267427224">
+          <figure class="product-style">
+            <img src="images/POP (Plaster Of Paris)/Geometric Pots (2).jpg" alt="Flower Bucket" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Flower Bucket</h4>
+            <div class="offer-price"><span class="prev-price">PKR 299</span> PKR 199</div>
+          </figcaption>
+        </div>
+
+        <div class="offer-card" data-id="1485932789">
+          <figure class="product-style">
+            <img src="images/Paper Clay/Decorative Lamp (3).jpg" alt="Decorative Lamp" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Decorative Lamp</h4>
+            <div class="offer-price"><span class="prev-price">PKR 400</span> PKR 300</div>
+          </figcaption>
+        </div>
+
+        <div class="offer-card" data-id="1537409183">
+          <figure class="product-style">
+            <img src="images/Wall Hangings/Air-Clay Wall Hanging.jpg" alt="Wall Hanging" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Air-Clay Wall Hanging</h4>
+            <div class="offer-price"><span class="prev-price">PKR 300</span> PKR 200</div>
+          </figcaption>
+        </div>
+
+        <div class="offer-card" data-id="1947854380">
+          <figure class="product-style">
+            <img src="images/Lifestyle Accessories/Mug (3).jpg" alt="Printed Mug" class="product-item">
+            <button class="card-add-btn" onclick="add(1)">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>Printed Mug</h4>
+            <div class="offer-price"><span class="prev-price">PKR 799</span> PKR 600</div>
+          </figcaption>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">What Customers Say</span>
+      <h2 class="section-title"><span>Customer</span> Reviews</h2>
+    </div>
+    <div class="reviews-grid">
+ 
+      <div class="review-card">
+        <div class="review-avatar">
+          <div class="avatar-placeholder">A</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Absolutely beautiful handmade products! The POP on Canvas I ordered exceeded my expectations. You can feel the love and effort put into every piece. Will definitely order again!"</p>
+        <div class="review-author">
+          <strong>Amna Khalid</strong>
+          <span>Karachi, Pakistan · 12/03/25</span>
+        </div>
+      </div>
+ 
+      <div class="review-card featured">
+        <div class="review-avatar">
+          <div class="avatar-placeholder">Z</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I bought the Bottle Flower Vase as a gift and everyone loved it! Knowing it was made by an autistic artist made it even more special. Spectrum Creations is doing amazing work."</p>
+        <div class="review-author">
+          <strong>Zara Ahmed</strong>
+          <span>Islamabad, Pakistan · 05/01/25</span>
+        </div>
+      </div>
+ 
+      <div class="review-card">
+        <div class="review-avatar">
+          <div class="avatar-placeholder">M</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The tote bag I ordered has stunning calligraphy. Fast delivery, great packaging, and a truly unique product. I love that my purchase supports such a meaningful cause!"</p>
+        <div class="review-author">
+          <strong>Mohammad Bilal</strong>
+          <span>Lahore, Pakistan · 28/02/25</span>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+  <!--  ABOUT  -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <span class="section-label">Who We Are</span>
+          <h2 class="section-title text-start"><span>About</span> Us</h2>
+          <div class="about-divider"></div>
+          <p><strong>Spectrum Creations</strong> is a social enterprise dedicated to showcasing the incredible artistic
+            talents of individuals on the autism spectrum.</p>
+          <p>We believe in providing a platform for neurodiverse voices to shine through art and handmade crafts. Our
+            mission is to promote inclusion, provide meaningful employment, and break stereotypes through creativity.
+          </p>
+          <div class="vision-box">
+            <i class="bi bi-eye-fill"></i>
+            <div>
+              <h5>Our Vision</h5>
+              <p>A world where every neurodiverse artist is empowered to share their gifts with confidence.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Unique Products</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Handmade</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Creativity</span>
+            </div>
+            <div class="stat-card highlight">
+              <span class="stat-num">❤</span>
+              <span class="stat-label">Made with Love</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  CONTACT  -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-image">
+          <img src="images/contactus.png" alt="Contact Us" class="floating-animation">
+        </div>
+
+        <div class="contact-info-box">
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title text-start"><span>Have</span> Questions?</h2>
+
+          <div class="contact-info-list">
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div class="info-text">
+                <h6>Email Us</h6>
+                <a href="mailto:example@gmail.com">example@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div class="info-text">
+                <h6>Call / WhatsApp</h6>
+                <a href="tel:###########">############</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="info-text">
+                <h6>Visit Our Center</h6>
+                <p>C-ARTS, ST-31, Block-15, Gulistan-e-Johar, Karachi</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="bi bi-globe"></i></div>
+              <div class="info-text">
+                <h6>Official Website</h6>
+                <a href="https://www.carts.org.pk/" target="_blank">www.carts.org.pk</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.330084478817!2d67.1186714!3d24.9123018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338e555555555%3A0x6b87654321fedcba!2sC-ARTS!5e0!3m2!1sen!2s!4v1713264446000"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!--  FOOTER  -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/main-logo.png" alt="Spectrum Creations" class="footer-logo">
+          </a>
+          <p>Your purchase supports artists on the autism spectrum, providing meaningful work and raising awareness
+            about neurodiversity through creativity.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-col">
+            <h5>Shop</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#popular-Spectrum_Creationss">Popular</a></li>
+              <li><a href="#featured-Spectrum_Creationss">Collections</a></li>
+              <li><a href="#special-offer">Offers</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-col">
+            <h5>About</h5>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 <strong>Spectrum Creations</strong> — Empowering Neurodiverse Artists</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Toast (professional feedback for cart actions) -->
+  <div class="toast-sc" id="toastSc" aria-live="polite" aria-atomic="true" role="status">
+    <div class="toast-sc-body" id="toastScBody"></div>
+  </div>
+
+  <!-- Backend connection status (only ever shown when the DB isn't reachable) -->
+  <div class="backend-notice" id="backendNotice" role="status">
+    <i class="bi bi-exclamation-triangle-fill"></i>
+    <span id="backendNoticeText"></span>
+    <button type="button" onclick="dismissBackendNotice()" aria-label="Dismiss">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <script>
+    //  TABS 
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('[data-tab-content]').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        const target = document.querySelector(this.dataset.tabTarget);
+        if (target) target.classList.add('active');
+      });
+    });
+
+    //  FEATURED COLLECTIONS SEARCH (category / product name / price range) 
+    // Scoped to #featured-Spectrum_Creationss only — searches the "All Collections"
+    // grid (which holds one card per product across every category) so a category
+    // or product match can surface regardless of which tab was open before searching.
+    (function initFeaturedSearch() {
+      const input = document.getElementById('fcSearchInput');
+      const minEl = document.getElementById('fcPriceMin');
+      const maxEl = document.getElementById('fcPriceMax');
+      const clearBtn = document.getElementById('fcSearchClear');
+      const emptyMsg = document.getElementById('fcSearchEmpty');
+      const allTab = document.querySelector('.tab[data-tab-target="#allCollections"]');
+      const allPanel = document.getElementById('allCollections');
+      if (!input || !allPanel) return;
+
+      const cards = Array.from(allPanel.querySelectorAll('.product-card'));
+
+      function currentQuery() {
+        return {
+          text: input.value.trim().toLowerCase(),
+          min: minEl.value !== '' ? Number(minEl.value) : null,
+          max: maxEl.value !== '' ? Number(maxEl.value) : null
+        };
+      }
+
+      function applyFilter() {
+        const q = currentQuery();
+        const searching = !!q.text || q.min !== null || q.max !== null;
+
+        // A search spans every category, so force the "All Collections" view while active.
+        if (searching && allTab && !allTab.classList.contains('active')) {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('[data-tab-content]').forEach(c => c.classList.remove('active'));
+          allTab.classList.add('active');
+          allPanel.classList.add('active');
+        }
+
+        let visible = 0;
+        cards.forEach(card => {
+          if (!searching) {
+            card.style.display = '';
+            visible++;
+            return;
+          }
+          const name = (card.querySelector('h4')?.textContent || '').toLowerCase();
+          const category = (card.dataset.category || '').toLowerCase();
+          const priceText = card.querySelector('.item-price')?.textContent || '';
+          const price = parseInt(priceText.replace(/[^\d]/g, ''), 10) || 0;
+
+          const matchesText = !q.text || name.includes(q.text) || category.includes(q.text);
+          const matchesMin = q.min === null || price >= q.min;
+          const matchesMax = q.max === null || price <= q.max;
+
+          const show = matchesText && matchesMin && matchesMax;
+          card.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+
+        emptyMsg.classList.toggle('show', searching && visible === 0);
+      }
+
+      input.addEventListener('input', applyFilter);
+      minEl.addEventListener('input', applyFilter);
+      maxEl.addEventListener('input', applyFilter);
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        minEl.value = '';
+        maxEl.value = '';
+        applyFilter();
+        input.focus();
+      });
+    })();
+
+    //  DROPDOWN NAV LINKS 
+    document.querySelectorAll('.dropdown a').forEach(item => {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('[data-tab-content]').forEach(c => c.classList.remove('active'));
+        const relatedTab = document.querySelector(`.tab[data-tab-target="${target}"]`);
+        if (relatedTab) relatedTab.classList.add('active');
+        const section = document.querySelector(target);
+        if (section) { section.classList.add('active'); section.scrollIntoView({ behavior: 'smooth' }); }
+        // close mobile menu
+        document.getElementById('navMenu').classList.remove('open');
+        document.getElementById('navOverlay').classList.remove('show');
+        document.getElementById('hamburger').classList.remove('active');
+      });
+    });
+
+    //  HAMBURGER 
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('open');
+      navOverlay.classList.toggle('show');
+    });
+
+    navOverlay.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('show');
+    });
+
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (siteHeader) siteHeader.classList.toggle('is-scrolled', window.scrollY > 16);
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('show');
+    }, { passive: true });
+    if (siteHeader) siteHeader.classList.toggle('is-scrolled', window.scrollY > 16);
+
+    // ===== SCROLL REVEAL (animate sections as they enter viewport) =====
+    (function initScrollReveal() {
+      const targets = [
+        ".section-head",
+        ".pop-card",
+        ".best-selling-grid",
+        ".product-card",
+        ".offer-card",
+        ".about-grid",
+        ".contact-grid",
+        "#reviews .section-head",
+        "#reviews .review-card",
+        "#footer .footer-top",
+        "#footer .footer-bottom",
+        ".map-container"
+      ];
+
+      const els = Array.from(document.querySelectorAll(targets.join(",")));
+      els.forEach((el, idx) => {
+        if (!el.classList.contains("reveal")) el.classList.add("reveal");
+        // stagger only within the same parent group visually
+        el.style.setProperty("--d", `${Math.min(idx * 45, 520)}ms`);
+      });
+
+      if (!("IntersectionObserver" in window)) {
+        els.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            // Normal reveal
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+
+            // ✅ Fix: ensure footer-bottom is revealed when footer-top becomes visible
+            // (prevents footer-bottom staying invisible due to size/threshold)
+            const footerTop = document.querySelector("#footer .footer-top");
+            const footerBottom = document.querySelector("#footer .footer-bottom");
+            if (footerTop && footerBottom && entry.target === footerTop) {
+              footerBottom.classList.add("is-visible");
+              obs.unobserve(footerBottom);
+            }
+          });
+        },
+        { root: null, threshold: 0.14, rootMargin: "0px 0px -12% 0px" }
+      );
+
+      els.forEach((el) => obs.observe(el));
+    })();
+    
+
+    // ===== MOBILE COLLECTIONS DROPDOWN TOGGLE =====
+    document.querySelectorAll('.has-dropdown > a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = this.closest('.has-dropdown');
+          parent.classList.toggle('open');
+        }
+      });
+    });
+
+    //  CART
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+    // ===============================================================
+    // BACKEND (MySQL via PHP) — see /backend in the project for the
+    // schema + API endpoints. If the backend isn't deployed yet (or
+    // is unreachable), every call below fails gracefully and the site
+    // keeps working exactly as it did client-only.
+    // ===============================================================
+    const API_BASE = "backend/api"; // relative — works whether the site sits at the domain root or in a subfolder
+    let backendAvailable = null; // null = unknown yet, true/false once we've tried
+
+    // Anonymous per-browser id, used only to tie a wishlist to "this device"
+    // since the site has no login system.
+    function getDeviceId() {
+      let id = localStorage.getItem("deviceId");
+      if (!id) {
+        id = "dev-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem("deviceId", id);
+      }
+      return id;
+    }
+    const deviceId = getDeviceId();
+
+    // ===== PRODUCT DATA (auto-built from DOM; supports multiple images) =====
+    // Keep curated multi-image sets here (keyed by the main image src used in cards).
+    const multiImageSets = {
+      "images/POP (Plaster Of Paris)/Flower Stand.jpg": [
+        "images/POP (Plaster Of Paris)/Flower Stand.jpg",
+        "images/POP (Plaster Of Paris)/POP on Canvas (1).jpg",
+        "images/POP (Plaster Of Paris)/POP on Canvas (2).jpg",
+        "images/POP (Plaster Of Paris)/POP on Canvas (3).jpg"
+      ],
+      "images/POP (Plaster Of Paris)/Geometric Pots (1).jpg": [
+        "images/POP (Plaster Of Paris)/Geometric Pots (1).jpg",
+        "images/POP (Plaster Of Paris)/Geometric Pots (2).jpg",
+        "images/POP (Plaster Of Paris)/Geometric Pot with Tray.jpg"
+      ],
+      "images/Paper Clay/Bottle Flower Vase (1).jpg": [
+        "images/Paper Clay/Bottle Flower Vase (1).jpg",
+        "images/Paper Clay/Bottle Flower Vase (2).jpg",
+        "images/Paper Clay/Bottle Flower Vase (3).jpg"
+      ]
+    };
+
+    let products = {};
+
+    function normalizeSrc(src) {
+      if (!src) return "";
+      // Decode any URL-encoding (e.g. %20 for spaces) without resolving
+      // against window.location.href — doing that bakes in whatever
+      // subfolder the site happens to be hosted under (e.g. XAMPP's
+      // localhost/spectrum-creations-updated/), which then gets
+      // prepended a second time elsewhere and 404s. All product images
+      // in this project live under "images/", so anchor on that instead
+      // — this works identically whether hosted at a domain root or in
+      // a subfolder.
+      let s = String(src).trim();
+      try { s = decodeURIComponent(s); } catch {}
+      const idx = s.indexOf("images/");
+      if (idx !== -1) return s.slice(idx);
+      return s.replace(/^\.?\//, "");
+    }
+
+    function parsePrice(text) {
+      if (!text) return 0;
+      const m = String(text).replace(/,/g, "").match(/(\d+(\.\d+)?)/);
+      return m ? Math.round(Number(m[1])) : 0;
+    }
+
+    // For offer cards, the price element contains BOTH the struck-through
+    // original price (".prev-price") and the discounted price as trailing
+    // text, e.g. <div class="offer-price"><span class="prev-price">PKR 299</span> PKR 199</div>.
+    // parsePrice() alone grabs the FIRST number it finds in the combined text,
+    // which is the original 299 — not the discounted 199 — so the cart ends
+    // up charging the pre-discount price. This pulls the discounted price
+    // specifically by stripping the .prev-price node before parsing.
+    function parseCardPrice(el) {
+      if (!el) return 0;
+      if (el.classList && el.classList.contains("offer-price")) {
+        const clone = el.cloneNode(true);
+        const prev = clone.querySelector(".prev-price");
+        if (prev) prev.remove();
+        return parsePrice(clone.textContent);
+      }
+      return parsePrice(el.textContent);
+    }
+
+    function idFromString(str) {
+      // FNV-1a 32bit hash -> positive integer
+      let h = 0x811c9dc5;
+      for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 0x01000193);
+      }
+      return (h >>> 0); // unsigned
+    }
+
+    /** Exactly four gallery slots per product: [main, extra1, extra2, extra3]. Use "" for slots you will fill later. */
+    function normalizeToFour(images) {
+      const src = Array.isArray(images) ? images.map((x) => (x && String(x).trim()) || "") : [];
+      const out = ["", "", "", ""];
+      for (let i = 0; i < 4; i++) out[i] = src[i] || "";
+      return out;
+    }
+
+    // ===== STOCK (deterministic per product id, so it's stable across reloads) =====
+    function computeStock(id) {
+      const h = idFromString(`stock-${id}`);
+      const bucket = h % 20;
+      if (bucket === 0) return 0;             // ~5% out of stock
+      if (bucket <= 3) return (h % 4) + 1;     // ~15% low stock (1-4 left)
+      return (h % 46) + 5;                     // rest: 5-50 in stock
+    }
+
+    function stockInfo(stock) {
+      stock = Number(stock) || 0;
+      if (stock <= 0) return { label: "Out of Stock", cls: "stock-out" };
+      if (stock <= 5) return { label: `Only ${stock} left`, cls: "stock-low" };
+      return { label: "In Stock", cls: "stock-in" };
+    }
+
+    function upsertProduct(p) {
+      if (!p || !p.id) return;
+      const merged = { ...(products[p.id] || {}), ...p };
+      if (merged.images !== undefined) merged.images = normalizeToFour(merged.images);
+      if (merged.stock === undefined) merged.stock = computeStock(merged.id);
+      products[p.id] = merged;
+    }
+
+    function wireAddButtons(tileEl, productId) {
+      const btns = tileEl.querySelectorAll(".card-add-btn, .add-btn, .btn-primary-sc");
+      btns.forEach((btn) => {
+        // Popular section uses quantity UI + existing onclick; don't override those
+        if (btn.classList.contains("add-btn")) return;
+        btn.removeAttribute("onclick");
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          add(productId);
+        });
+      });
+    }
+
+    // Adds a wishlist heart + a stock badge to a card (once), then syncs their state
+    function wireCardExtras(tile, id) {
+      const imgWrap =
+        tile.querySelector(".product-style") ||
+        tile.querySelector(".pop-card-img") ||
+        (tile.classList.contains("best-img-wrap") ? tile : null);
+
+      if (imgWrap && !imgWrap.querySelector(".wish-heart")) {
+        const heart = document.createElement("button");
+        heart.type = "button";
+        heart.className = "wish-heart";
+        heart.setAttribute("aria-label", "Add to wishlist");
+        heart.innerHTML = '<i class="bi bi-heart"></i>';
+        heart.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleWish(id);
+        });
+        imgWrap.appendChild(heart);
+      }
+
+      if (!tile.querySelector(".stock-badge")) {
+        const priceEl =
+          tile.querySelector(".item-price") ||
+          tile.querySelector(".pop-price") ||
+          tile.querySelector(".offer-price") ||
+          tile.querySelector(".best-price");
+        const badge = document.createElement("span");
+        badge.className = "stock-badge";
+        if (priceEl && priceEl.parentNode) priceEl.insertAdjacentElement("afterend", badge);
+        else tile.appendChild(badge);
+      }
+
+      refreshCardState(id);
+    }
+
+    // Syncs heart state, stock badge text, and add-button disabled state for every
+    // element sharing this product id (a product can appear in more than one section).
+    function refreshCardState(id) {
+      const p = products[id];
+      if (!p) return;
+      const stock = typeof p.stock === "number" ? p.stock : 0;
+      const info = stockInfo(stock);
+
+      document.querySelectorAll(`[data-id="${id}"]`).forEach((tile) => {
+        tile.classList.toggle("out-of-stock", stock <= 0);
+
+        const badge = tile.querySelector(".stock-badge");
+        if (badge) {
+          badge.textContent = info.label;
+          badge.className = `stock-badge ${info.cls}`;
+        }
+
+        const heart = tile.querySelector(".wish-heart");
+        if (heart) {
+          const wished = isWished(id);
+          heart.classList.toggle("active", wished);
+          heart.innerHTML = wished ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>';
+          heart.setAttribute("aria-label", wished ? "Remove from wishlist" : "Add to wishlist");
+        }
+
+        tile.querySelectorAll(".card-add-btn, .add-btn, .btn-primary-sc").forEach((btn) => {
+          btn.disabled = stock <= 0;
+          btn.classList.toggle("btn-disabled", stock <= 0);
+          if (stock <= 0 && !btn.dataset.origLabel) {
+            btn.dataset.origLabel = btn.innerHTML;
+            btn.innerHTML = "Out of Stock";
+          } else if (stock > 0 && btn.dataset.origLabel) {
+            btn.innerHTML = btn.dataset.origLabel;
+            delete btn.dataset.origLabel;
+          }
+        });
+      });
+    }
+
+    function buildProductsCatalog() {
+      products = {};
+
+      // Keep existing fixed IDs for the Popular section quantity UI
+      upsertProduct({
+        id: 1,
+        name: "POP on Canvas",
+        price: 399,
+        desc: "A textured Plaster of Paris creation designed to brighten any corner.",
+        images: ["images/POP (Plaster Of Paris)/POP on Canvas (2).jpg"]
+      });
+      upsertProduct({
+        id: 2,
+        name: "Geometric Pots",
+        price: 249,
+        desc: "Clean lines, modern shapes — perfect for small plants or desk decor.",
+        images: multiImageSets["images/POP (Plaster Of Paris)/Geometric Pots (1).jpg"]
+      });
+      upsertProduct({
+        id: 3,
+        name: "Artistic Bottle",
+        price: 600,
+        desc: "A handcrafted bottle vase with expressive color and personality.",
+        images: multiImageSets["images/Paper Clay/Bottle Flower Vase (1).jpg"]
+      });
+
+      // Featured + Offers cards
+      const tiles = document.querySelectorAll(".product-card, .offer-card, .pop-card, .best-img-wrap");
+      tiles.forEach((tile) => {
+        // If it already has a numeric data-id (e.g., Popular cards and best seller), keep it.
+        const existingId = Number(tile.getAttribute("data-id"));
+        let img = tile.querySelector("img");
+        let imgSrc = normalizeSrc(img ? img.getAttribute("src") : "");
+
+        // Derive title and price from the card
+        const titleEl =
+          tile.querySelector("figcaption h4") ||
+          tile.querySelector(".pop-card-info h4") ||
+          tile.querySelector(".author-tag");
+        const title = titleEl ? titleEl.textContent.trim() : "Product";
+
+        const priceEl =
+          tile.querySelector(".item-price") ||
+          tile.querySelector(".pop-price") ||
+          tile.querySelector(".offer-price") ||
+          tile.querySelector(".best-price");
+        const price = parseCardPrice(priceEl);
+
+        // Use existing ids for 1..3 to keep other UI (qty, best seller) consistent
+        let id = Number.isFinite(existingId) && existingId > 0 ? existingId : 0;
+        if (!id) id = idFromString(`${imgSrc}|${title}`) || idFromString(imgSrc) || Date.now();
+
+        // Ensure DOM has the id (for quick view)
+        tile.setAttribute("data-id", String(id));
+
+        const images = multiImageSets[imgSrc] || (imgSrc ? [imgSrc] : []);
+        upsertProduct({
+          id,
+          name: title,
+          price,
+          desc: "Handmade with love by neurodiverse creators.",
+          images,
+          isOffer: tile.classList.contains("offer-card")
+        });
+
+// Wire ALL add buttons (catalog rewires everything)
+        wireAddButtons(tile, id);
+
+// Add wishlist heart + stock badge, and sync their state
+        wireCardExtras(tile, id);
+
+// Fix legacy inline onclick → data-id on cards
+        tile.querySelectorAll("[onclick^='add(']").forEach((btn) => {
+          btn.removeAttribute("onclick");
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            add(id);
+          });
+        });
+      });
+    }
+
+
+    // ===== WISHLIST (declared before buildProductsCatalog, which reads it via refreshCardState) =====
+    let wishlist = [];
+    try { wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; } catch { wishlist = []; }
+
+    function saveWish() { localStorage.setItem("wishlist", JSON.stringify(wishlist)); }
+    function isWished(id) { return wishlist.includes(Number(id)); }
+
+    buildProductsCatalog();
+
+    // ---- Pull real price + stock from the database, overriding the
+    // DOM-derived placeholder values. Falls back to whatever the page
+    // already computed if the backend isn't deployed/reachable — but
+    // unlike before, it now says *why* clearly, both in the console and
+    // (only when unreachable) in a small dismissible on-page notice, so
+    // "why isn't data saving to the database" is actually diagnosable
+    // without needing DevTools open. ----
+    async function syncProductsFromServer() {
+      try {
+        let res;
+        try {
+          res = await fetch(`${API_BASE}/products.php`);
+        } catch (networkErr) {
+          throw { kind: "network", detail: networkErr.message };
+        }
+
+        if (!res.ok) {
+          throw { kind: "http", status: res.status };
+        }
+
+        let json;
+        try {
+          json = await res.json();
+        } catch (parseErr) {
+          throw { kind: "parse" };
+        }
+
+        if (json.error || !Array.isArray(json.data)) {
+          throw { kind: "app", detail: json.message || "Unexpected response shape" };
+        }
+
+        json.data.forEach((row) => {
+          if (!products[row.id]) return; // DB has a product the page doesn't render — ignore it here
+          if (products[row.id].isOffer) {
+            // Offer cards show a special discounted price the database doesn't
+            // know about — only refresh stock for these, keep the offer price.
+            upsertProduct({ id: row.id, stock: row.stock });
+          } else {
+            upsertProduct({ id: row.id, price: row.price, stock: row.stock });
+          }
+          refreshCardState(row.id);
+        });
+        backendAvailable = true;
+        console.log(`\u2705 Store backend connected \u2014 ${json.data.length} products synced from MySQL. Orders and wishlist actions will be saved to the database.`);
+        dismissBackendNotice();
+      } catch (err) {
+        backendAvailable = false;
+        const messages = {
+          network: "Couldn't reach backend/api/products.php at all. Check that the /backend folder is uploaded next to index.html, and that you're viewing the site via http(s):// \u2014 not by double-clicking the file.",
+          http: err.status === 404
+            ? "backend/api/products.php returned 404 \u2014 the endpoint doesn't exist at that path. Check that the /backend folder was uploaded next to index.html and that the filename/route is correct."
+            : `Backend responded with HTTP ${err.status}. Check backend/config.php's database credentials and your host's PHP error log.`,
+          parse: "Backend responded with something that isn't valid JSON \u2014 usually means a PHP fatal error page instead of the API response. Check your host's PHP error log.",
+          app: `Backend reported an error: ${err.detail}`
+        };
+        const msg = messages[err.kind] || "Unknown connection error.";
+        console.warn("\u26a0\ufe0f Store backend not connected \u2014 running in client-only mode (orders/wishlist won't be saved to MySQL). " + msg);
+        // On-page banner disabled per request — the warning above still logs to console for debugging.
+        // showBackendNotice("Store database not connected \u2014 orders & wishlist won't be saved. " + msg);
+      }
+    }
+    syncProductsFromServer();
+
+    function showBackendNotice(message) {
+      return; // disabled — banner intentionally suppressed
+      if (sessionStorage.getItem("backendNoticeDismissed") === "1") return;
+      const el = document.getElementById("backendNotice");
+      const textEl = document.getElementById("backendNoticeText");
+      if (!el || !textEl) return;
+      textEl.textContent = message;
+      el.classList.add("show");
+    }
+
+    function dismissBackendNotice() {
+      const el = document.getElementById("backendNotice");
+      if (el) el.classList.remove("show");
+      sessionStorage.setItem("backendNoticeDismissed", "1");
+    }
+
+    function toggleWish(id) {
+      id = Number(id);
+      const p = getProduct(id);
+      const nowWished = !isWished(id);
+
+      if (nowWished) {
+        wishlist.push(id);
+        showToast(`${p.name} added to wishlist`);
+      } else {
+        wishlist = wishlist.filter((x) => x !== id);
+        showToast(`${p.name} removed from wishlist`);
+      }
+      saveWish();
+      refreshCardState(id);
+      renderWishlist();
+      syncWishToServer(id, nowWished);
+    }
+
+    // Best-effort sync to MySQL — localStorage already updated above,
+    // so a failed/offline backend never blocks the UI.
+    function syncWishToServer(productId, added) {
+      fetch(`${API_BASE}/wishlist.php`, {
+        method: added ? "POST" : "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ device_id: deviceId, product_id: productId })
+      }).catch((err) => console.warn("Wishlist sync failed (offline/no backend):", err));
+    }
+
+    // On load, if a backend is reachable, let the server's saved wishlist
+    // for this device be the source of truth (covers a new browser/device).
+    async function hydrateWishlistFromServer() {
+      try {
+        const res = await fetch(`${API_BASE}/wishlist.php?device_id=${encodeURIComponent(deviceId)}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        if (json.error || !Array.isArray(json.data)) throw new Error(json.message || "Bad response");
+
+        const serverIds = json.data.map((row) => Number(row.id));
+        if (serverIds.length) {
+          wishlist = [...new Set([...wishlist, ...serverIds])];
+          saveWish();
+          wishlist.forEach((id) => refreshCardState(id));
+          renderWishlist();
+        }
+      } catch (err) {
+        console.warn("Could not hydrate wishlist from backend:", err);
+      }
+    }
+
+    function toggleWishlist() {
+      document.getElementById("wishDrawer").classList.toggle("open");
+      renderWishlist();
+    }
+
+    function renderWishlist() {
+      const box = document.getElementById("wishItems");
+      const countEl = document.getElementById("wishCount");
+      if (!box || !countEl) return;
+      countEl.textContent = wishlist.length;
+
+      if (wishlist.length === 0) {
+        box.innerHTML = `<div class="cart-empty"><i class="bi bi-heart"></i><p>Your wishlist is empty</p></div>`;
+        return;
+      }
+
+      box.innerHTML = "";
+      wishlist.forEach((id) => {
+        const p = getProduct(id);
+        const stock = typeof p.stock === "number" ? p.stock : 0;
+        const info = stockInfo(stock);
+        box.innerHTML += `
+          <div class="cart-item wishlist-item">
+            <div class="cart-item-left">
+              <div class="cart-item-thumb">
+                <img src="${getProductThumb(id)}" alt="${p.name}">
+              </div>
+              <div class="cart-item-meta">
+                <div class="cart-item-title">${p.name}</div>
+                <span class="stock-badge ${info.cls}">${info.label}</span>
+                <div class="cart-remove" onclick="toggleWish(${id})"><i class="bi bi-trash3"></i> Remove</div>
+              </div>
+            </div>
+            <div class="cart-item-right">
+              <div class="cart-item-price">PKR ${typeof p.price === "number" ? p.price : 0}</div>
+              <button class="wish-move-btn" ${stock <= 0 ? "disabled" : ""} onclick="moveToCart(${id})">
+                ${stock <= 0 ? "Unavailable" : "Move to Bag"}
+              </button>
+            </div>
+          </div>`;
+      });
+    }
+
+    function moveToCart(id) {
+      id = Number(id);
+      const p = getProduct(id);
+      const stock = typeof p.stock === "number" ? p.stock : 0;
+      if (stock <= 0) {
+        showToast(`${p.name} is out of stock`);
+        return;
+      }
+      add(id);
+      wishlist = wishlist.filter((x) => x !== id);
+      saveWish();
+      refreshCardState(id);
+      renderWishlist();
+    }
+
+    function save() { localStorage.setItem("cart", JSON.stringify(cart)); }
+
+    function getProduct(id) {
+      const raw = products[id] || { id, name: `Item ${id}`, price: 0, images: ["", "", "", ""] };
+      return { ...raw, images: normalizeToFour(raw.images) };
+    }
+
+    function getProductPrice(id) {
+      const p = getProduct(id);
+      return typeof p.price === "number" ? p.price : 0;
+    }
+
+    function getProductThumb(id) {
+      const p = getProduct(id);
+      if (p && Array.isArray(p.images)) {
+        const first = p.images.find((s) => s && String(s).trim());
+        if (first) return first;
+      }
+      return "images/main-banner1.jpg";
+    }
+
+    // ===== TOAST (non-blocking feedback) =====
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById("toastSc");
+      const body = document.getElementById("toastScBody");
+      if (!toast || !body) return;
+      body.textContent = message;
+      toast.classList.add("show");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+    }
+
+    function update(id, type) {
+      id = Number(id);
+      if (!Number.isFinite(id)) return;
+      const p = getProduct(id);
+      const stock = typeof p.stock === "number" ? p.stock : Infinity;
+      let qty = cart[id] || 0;
+      if (type === "inc") qty++;
+      if (type === "dec") qty--;
+      if (qty > stock) {
+        qty = stock;
+        showToast(stock > 0 ? `Only ${stock} in stock` : `${p.name} is out of stock`);
+      }
+      if (qty <= 0) delete cart[id];
+      else cart[id] = qty;
+      save(); render(); sync();
+    }
+
+    function add(id) {
+      const p = getProduct(id);
+      const stock = typeof p.stock === "number" ? p.stock : Infinity;
+      if (stock <= 0) {
+        showToast(`${p.name} is out of stock`);
+        return;
+      }
+      if ((cart[id] || 0) >= stock) {
+        showToast(`Only ${stock} in stock`);
+        return;
+      }
+      update(id, "inc");
+      showToast(`${p.name} added to bag`);
+    }
+
+    function inc(id) {
+      update(id, "inc");
+      const p = getProduct(id);
+      showToast(`${p.name} quantity updated`);
+    }
+
+    function dec(id) {
+      update(id, "dec");
+      const p = getProduct(id);
+      showToast(cart[id] ? `${p.name} quantity updated` : `${p.name} removed from bag`);
+    }
+
+    function removeItem(id) {
+      const p = getProduct(id);
+      delete cart[id];
+      save();
+      render();
+      sync();
+      showToast(`${p.name} removed from bag`);
+    }
+
+    function toggleCart() { document.getElementById("drawer").classList.toggle("open"); }
+
+    function render() {
+      let box = document.getElementById("items");
+      let total = 0, count = 0;
+      box.innerHTML = "";
+      for (let id in cart) {
+        const p = getProduct(id);
+        let qty = cart[id], price = getProductPrice(id);
+        total += qty * price; count += qty;
+        box.innerHTML += `
+          <div class="cart-item">
+            <div class="cart-item-left">
+              <div class="cart-item-thumb">
+                <img src="${getProductThumb(id)}" alt="${p.name}">
+              </div>
+              <div class="cart-item-meta">
+                <div class="cart-item-title">${p.name}</div>
+               <div class="cart-qty-ctrl">
+  <button onclick="dec(${id})" aria-label="Decrease quantity">−</button>
+  <span>${qty}</span>
+  <button onclick="inc(${id})" aria-label="Increase quantity">+</button>
+</div>
+<div class="cart-remove" onclick="removeItem(${id})"><i class="bi bi-trash3"></i> Remove</div>
+              </div>
+            </div>
+            <div class="cart-item-right">
+              <div class="cart-item-price">PKR ${qty * price}</div>
+            </div>
+          </div>`;
+      }
+      document.getElementById("total").innerText = total;
+      document.getElementById("count").innerText = count;
+      if (count === 0) box.innerHTML = `<div class="cart-empty"><i class="bi bi-bag-x"></i><p>Your bag is empty</p></div>`;
+    }
+
+    function sync() {
+      // Popular cards have quantity UI. Keep them in sync everywhere on the page.
+      document.querySelectorAll("[id^='q-']").forEach((qEl) => {
+        const id = Number(qEl.id.replace("q-", ""));
+        const qty = cart[id] || 0;
+        const v = document.getElementById("val-" + id);
+        const btn = document.querySelector(`[data-id="${id}"] .add-btn`);
+        if (qty > 0) {
+          qEl.style.display = "flex";
+          if (v) v.innerText = qty;
+          if (btn) btn.style.display = "none";
+        } else {
+          qEl.style.display = "none";
+          if (btn) btn.style.display = "inline-flex";
+        }
+      });
+    }
+
+    function checkout() {
+      if (Object.keys(cart).length === 0) {
+        alert("Cart is empty");
+        return;
+      }
+
+      document.getElementById("orderModal").style.display = "flex";
+      // (Re)load provinces every time the form opens
+      loadProvinces();
+    }
+
+    // ===============================================================
+    // DELIVERY FORM: Province → City → Area cascade.
+    //  - Province / City: a maintained, embedded Pakistan dataset.
+    //    This used to call the free countriesnow.space API, but that
+    //    service has a documented, reproducible bug where its POST
+    //    endpoints (exactly the ones needed here) silently drop the
+    //    request body — see
+    //    https://github.com/MartinsOnuoha/countriesNowAPI/issues/165 —
+    //    which is what caused "Couldn't load cities" for every user.
+    //    Country/city lists are slow-changing reference data, so a
+    //    maintained local list is the standard, reliable choice here
+    //    rather than depending on a broken third-party demo API.
+    //  - Area: OpenStreetMap (Nominatim + Overpass) — a different,
+    //    actively-used service with no such issue, so that stays live.
+    // ===============================================================
+    const NOMINATIM_API = "https://nominatim.openstreetmap.org";
+    const OVERPASS_API = "https://overpass-api.de/api/interpreter";
+
+    const PK_LOCATIONS = {
+      "Punjab": [
+        "Lahore", "Faisalabad", "Rawalpindi", "Multan", "Gujranwala", "Sialkot",
+        "Bahawalpur", "Sargodha", "Sheikhupura", "Jhang", "Rahim Yar Khan",
+        "Gujrat", "Kasur", "Okara", "Sahiwal", "Wah Cantt", "Dera Ghazi Khan",
+        "Mianwali", "Chiniot", "Vehari"
+      ],
+      "Sindh": [
+        "Karachi", "Hyderabad", "Sukkur", "Larkana", "Nawabshah", "Mirpurkhas",
+        "Jacobabad", "Shikarpur", "Khairpur", "Dadu", "Thatta", "Badin",
+        "Ghotki", "Sanghar", "Tando Adam"
+      ],
+      "Khyber Pakhtunkhwa": [
+        "Peshawar", "Mardan", "Mingora", "Kohat", "Abbottabad",
+        "Dera Ismail Khan", "Bannu", "Swabi", "Nowshera", "Charsadda",
+        "Mansehra", "Haripur", "Chitral", "Batkhela"
+      ],
+      "Balochistan": [
+        "Quetta", "Turbat", "Khuzdar", "Chaman", "Gwadar", "Sibi", "Zhob",
+        "Loralai", "Dera Murad Jamali", "Hub"
+      ],
+      "Islamabad Capital Territory": ["Islamabad"],
+      "Gilgit-Baltistan": ["Gilgit", "Skardu", "Hunza", "Ghanche", "Astore"],
+      "Azad Kashmir": ["Muzaffarabad", "Mirpur", "Kotli", "Rawalakot", "Bagh"]
+    };
+
+    function loadProvinces() {
+      const sel = document.getElementById("province");
+      if (!sel || sel.options.length > 1) return; // already populated
+      fillSelect(sel, Object.keys(PK_LOCATIONS), "Please choose your province");
+    }
+
+    function onProvinceChange() {
+      const province = document.getElementById("province").value;
+      const citySel = document.getElementById("city");
+      clearFieldError("city");
+      resetAreaField("Please choose your city first");
+
+      if (!province || !PK_LOCATIONS[province]) {
+        citySel.innerHTML = '<option value="">Please choose your city</option>';
+        citySel.disabled = true;
+        return;
+      }
+
+      fillSelect(citySel, PK_LOCATIONS[province], "Please choose your city");
+      citySel.disabled = false;
+    }
+
+    function onCityChange() {
+      clearFieldError("city");
+      const city = document.getElementById("city").value;
+      if (!city) {
+        resetAreaField("Please choose your city first");
+        return;
+      }
+      loadAreas(city);
+    }
+
+    // ---- Area: Nominatim (resolve city → OSM boundary) then Overpass
+    // (real suburbs/neighbourhoods inside that boundary) ----
+    let areaRequestToken = 0;
+
+    async function runOverpassQuery(query, myToken) {
+      const res = await fetch(OVERPASS_API, {
+        method: "POST",
+        body: new URLSearchParams({ data: query })
+      });
+      if (myToken !== areaRequestToken) return [];
+      if (!res.ok) throw new Error(`Overpass HTTP ${res.status}`);
+      const data = await res.json();
+      return [...new Set(
+        (data.elements || [])
+          .map((el) => el.tags && el.tags.name)
+          .filter(Boolean)
+      )].sort();
+    }
+
+    function resetAreaField(placeholder) {
+      const areaSel = document.getElementById("area");
+      const manual = document.getElementById("areaManual");
+      areaSel.style.display = "";
+      areaSel.innerHTML = `<option value="">${placeholder}</option>`;
+      areaSel.disabled = true;
+      manual.style.display = "none";
+      manual.value = "";
+      clearFieldError("area");
+    }
+
+    const PLACE_TAG_FILTER = "suburb|neighbourhood|neighborhood|quarter|town|village|hamlet|city_block";
+
+    async function loadAreas(city) {
+      const areaSel = document.getElementById("area");
+      const manual = document.getElementById("areaManual");
+      const myToken = ++areaRequestToken;
+
+      manual.style.display = "none";
+      manual.value = "";
+      areaSel.style.display = "";
+      areaSel.disabled = true;
+      areaSel.innerHTML = '<option value="">Loading areas…</option>';
+
+      try {
+        // Step 1 — resolve the city name to its OSM record (boundary polygon
+        // for big cities, or just a point for smaller towns)
+        const nomUrl = `${NOMINATIM_API}/search?city=${encodeURIComponent(city)}&country=Pakistan&format=json&limit=1`;
+        const nomRes = await fetch(nomUrl, { headers: { "Accept": "application/json" } });
+        if (myToken !== areaRequestToken) return; // a newer city selection superseded this request
+        if (!nomRes.ok) throw new Error(`Nominatim HTTP ${nomRes.status}`);
+        const nomData = await nomRes.json();
+        if (!nomData.length) throw new Error("City not found in OSM");
+
+        const place = nomData[0];
+        let names = [];
+
+        // Step 2a — if OSM has a real polygon for this city, query strictly inside it
+        if (place.osm_type === "relation" || place.osm_type === "way") {
+          const areaId = (place.osm_type === "relation" ? 3600000000 : 2400000000) + Number(place.osm_id);
+          const boundaryQuery = `[out:json][timeout:25];area(${areaId})->.a;(node["place"~"^(${PLACE_TAG_FILTER})$"](area.a);way["place"~"^(${PLACE_TAG_FILTER})$"](area.a);relation["place"~"^(${PLACE_TAG_FILTER})$"](area.a););out tags center 150;`;
+          names = await runOverpassQuery(boundaryQuery, myToken);
+          if (myToken !== areaRequestToken) return;
+        }
+
+        // Step 2b — fallback (or primary, for point-only cities): search within
+        // a radius of the city's coordinates instead of requiring a polygon
+        if (!names.length) {
+          const lat = Number(place.lat);
+          const lon = Number(place.lon);
+          if (Number.isFinite(lat) && Number.isFinite(lon)) {
+            const radiusQuery = `[out:json][timeout:25];(node["place"~"^(${PLACE_TAG_FILTER})$"](around:15000,${lat},${lon});way["place"~"^(${PLACE_TAG_FILTER})$"](around:15000,${lat},${lon});relation["place"~"^(${PLACE_TAG_FILTER})$"](around:15000,${lat},${lon}););out tags center 150;`;
+            names = await runOverpassQuery(radiusQuery, myToken);
+            if (myToken !== areaRequestToken) return;
+          }
+        }
+
+        if (!names.length) throw new Error("No areas returned for this city");
+
+        fillSelect(areaSel, names, "Please choose your area");
+        const otherOpt = document.createElement("option");
+        otherOpt.value = "__manual__";
+        otherOpt.textContent = "Other / not listed — type it myself";
+        areaSel.appendChild(otherOpt);
+        areaSel.disabled = false;
+      } catch (err) {
+        if (myToken !== areaRequestToken) return;
+        console.warn("Area API failed, falling back to manual entry:", err);
+        // Graceful degradation: hide the (now useless) select and let the
+        // user type their area directly, rather than blocking checkout.
+        areaSel.style.display = "none";
+        manual.style.display = "block";
+      }
+    }
+
+    function onAreaSelectChange() {
+      const areaSel = document.getElementById("area");
+      const manual = document.getElementById("areaManual");
+      if (areaSel.value === "__manual__") {
+        manual.style.display = "block";
+        manual.focus();
+      } else {
+        manual.style.display = "none";
+        manual.value = "";
+      }
+      clearFieldError("area");
+    }
+
+    function getAreaValue() {
+      const areaSel = document.getElementById("area");
+      const manual = document.getElementById("areaManual");
+      if (manual && manual.style.display !== "none") return manual.value.trim();
+      return areaSel ? areaSel.value : "";
+    }
+
+    function fillSelect(sel, values, placeholder) {
+      sel.innerHTML = "";
+      const opt0 = document.createElement("option");
+      opt0.value = "";
+      opt0.textContent = placeholder;
+      sel.appendChild(opt0);
+      values.forEach((v) => {
+        const opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = v;
+        sel.appendChild(opt);
+      });
+    }
+
+    // ===== DELIVERY FORM: Home / Office label =====
+    let selectedAddressTag = "";
+    function selectAddressTag(tag) {
+      selectedAddressTag = selectedAddressTag === tag ? "" : tag;
+      document.querySelectorAll(".d-tag").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tag === selectedAddressTag);
+      });
+      clearFieldError("tag");
+    }
+
+    // ===== DELIVERY FORM: Payment method (Cash on Delivery only, for now) =====
+    let selectedPaymentMethod = "cod"; // pre-selected — it's the only option today
+    function selectPaymentMethod(method) {
+      selectedPaymentMethod = method;
+      document.querySelectorAll(".d-payment-option").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.method === method);
+      });
+      clearFieldError("payment");
+    }
+
+    loadProvinces();
+
+
+    // ===============================================================
+    // DELIVERY FORM: field-level validation
+    // ===============================================================
+    const deliveryValidators = {
+      name: {
+        required: true,
+        pattern: /^[A-Za-z][A-Za-z\s'.-]{2,59}$/,
+        message: "Enter your full name using letters only (3–60 characters)."
+      },
+      mobile: {
+        required: true,
+        pattern: /^03[0-9]{9}$/,
+        message: "Enter an 11-digit Pakistani mobile number starting with 03 (e.g. 03001234567)."
+      },
+      addr1: {
+        required: true,
+        minLength: 3,
+        maxLength: 100,
+        message: "Enter your building / house / street details (3–100 characters)."
+      },
+      addr2: {
+        required: false,
+        maxLength: 100,
+        message: "Keep this under 100 characters."
+      },
+      province: {
+        required: true,
+        message: "Please select your province."
+      },
+      city: {
+        required: true,
+        message: "Please select your city."
+      },
+      address: {
+        required: true,
+        minLength: 8,
+        maxLength: 200,
+        message: "Enter a complete address, at least 8 characters."
+      }
+    };
+
+    // Restrict the phone field to digits only, live, as the user types —
+    // standard practice for numeric-only inputs instead of validating after the fact.
+    document.getElementById("mobile").addEventListener("input", (e) => {
+      e.target.value = e.target.value.replace(/\D/g, "").slice(0, 11);
+    });
+
+    // Wire live validation (on blur, and on input once a field has already been touched)
+    Object.keys(deliveryValidators).forEach((id) => {
+      const field = document.getElementById(id);
+      if (!field) return;
+      field.addEventListener("blur", () => validateDeliveryField(id));
+      field.addEventListener("input", () => {
+        if (field.dataset.touched === "1") validateDeliveryField(id);
+      });
+      field.addEventListener("blur", () => { field.dataset.touched = "1"; });
+    });
+
+    // Area has its own dual select/manual-input validation (see validateAreaField)
+    ["area", "areaManual"].forEach((id) => {
+      const field = document.getElementById(id);
+      if (!field) return;
+      field.addEventListener("blur", () => validateAreaField());
+      field.addEventListener("change", () => validateAreaField());
+      field.addEventListener("input", () => {
+        if (field.dataset.touched === "1") validateAreaField();
+      });
+      field.addEventListener("blur", () => { field.dataset.touched = "1"; });
+    });
+
+    function validateDeliveryField(id) {
+      const rule = deliveryValidators[id];
+      const field = document.getElementById(id);
+      if (!rule || !field) return true;
+
+      const value = (field.value || "").trim();
+
+      if (rule.required && !value) {
+        return setFieldError(id, rule.message);
+      }
+      if (!value && !rule.required) {
+        return clearFieldError(id), true;
+      }
+      if (rule.minLength && value.length < rule.minLength) {
+        return setFieldError(id, rule.message);
+      }
+      if (rule.maxLength && value.length > rule.maxLength) {
+        return setFieldError(id, rule.message);
+      }
+      if (rule.pattern && !rule.pattern.test(value)) {
+        return setFieldError(id, rule.message);
+      }
+      return clearFieldError(id), true;
+    }
+
+    const areaManualPattern = /^[A-Za-z0-9][A-Za-z0-9\s,'.-]{1,79}$/;
+
+    function validateAreaField() {
+      const areaSel = document.getElementById("area");
+      const manual = document.getElementById("areaManual");
+      const usingManual = manual.style.display !== "none";
+      const value = getAreaValue();
+
+      if (usingManual) {
+        if (!value) return setAreaError("Please type your area / locality.", manual);
+        if (!areaManualPattern.test(value)) {
+          return setAreaError("Enter a valid area / locality (2–80 characters).", manual);
+        }
+        return clearAreaError(), true;
+      }
+
+      if (!value) return setAreaError("Please select your area (or choose \u201cOther\u201d to type it).", areaSel);
+      return clearAreaError(), true;
+    }
+
+    function setAreaError(message, activeField) {
+      document.getElementById("area").classList.remove("d-invalid");
+      document.getElementById("areaManual").classList.remove("d-invalid");
+      if (activeField) activeField.classList.add("d-invalid");
+      document.getElementById("err-area").textContent = message;
+      return false;
+    }
+
+    function clearAreaError() {
+      document.getElementById("area").classList.remove("d-invalid");
+      document.getElementById("areaManual").classList.remove("d-invalid");
+      document.getElementById("err-area").textContent = "";
+    }
+
+    function setFieldError(id, message) {
+      const field = document.getElementById(id);
+      const err = document.getElementById(`err-${id}`);
+      if (field) field.classList.add("d-invalid");
+      if (err) err.textContent = message;
+      return false;
+    }
+
+    function clearFieldError(id) {
+      const field = document.getElementById(id);
+      const err = document.getElementById(`err-${id}`);
+      if (field) field.classList.remove("d-invalid");
+      if (err) err.textContent = "";
+    }
+
+    function validateDeliveryForm() {
+      let valid = true;
+      let firstInvalidField = null;
+
+      Object.keys(deliveryValidators).forEach((id) => {
+        const ok = validateDeliveryField(id);
+        if (!ok && !firstInvalidField) firstInvalidField = document.getElementById(id);
+        valid = valid && ok;
+      });
+
+      const areaOk = validateAreaField();
+      if (!areaOk && !firstInvalidField) {
+        firstInvalidField = document.getElementById("areaManual").style.display !== "none"
+          ? document.getElementById("areaManual")
+          : document.getElementById("area");
+      }
+      valid = valid && areaOk;
+
+      if (!selectedAddressTag) {
+        setFieldError("tag", "Please select Home or Office.");
+        if (!firstInvalidField) firstInvalidField = document.querySelector('[data-tag="office"]');
+        valid = false;
+      } else {
+        clearFieldError("tag");
+      }
+
+      if (!selectedPaymentMethod) {
+        setFieldError("payment", "Please select a payment method.");
+        if (!firstInvalidField) firstInvalidField = document.querySelector('[data-method="cod"]');
+        valid = false;
+      } else {
+        clearFieldError("payment");
+      }
+
+      if (!valid && firstInvalidField) firstInvalidField.focus();
+      return valid;
+    }
+
+    async function placeOrder() {
+
+      if (!validateDeliveryForm()) return;
+
+      let name = document.getElementById("name").value.trim();
+      let mobile = document.getElementById("mobile").value.trim();
+      let addr1 = document.getElementById("addr1").value.trim();
+      let addr2 = document.getElementById("addr2").value.trim();
+      let province = document.getElementById("province").value;
+      let city = document.getElementById("city").value;
+      let area = getAreaValue();
+      let address = document.getElementById("address").value.trim();
+
+      const fullAddress = [address, addr1, addr2, area, city, province]
+        .filter(Boolean)
+        .join(", ");
+
+      const saveBtn = document.getElementById("deliverySaveBtn");
+      const originalLabel = saveBtn.innerHTML;
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = "Placing order…";
+
+      const payload = {
+        name,
+        mobile,
+        address: fullAddress,
+        addressTag: selectedAddressTag || "N/A",
+        paymentMethod: selectedPaymentMethod,
+        items: cart
+      };
+
+      let serverResult = null;
+      let backendReachable = true;
+
+      try {
+        const res = await fetch(`${API_BASE}/order.php`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        serverResult = await res.json(); // throws if this isn't real JSON (e.g. backend not deployed)
+      } catch (err) {
+        backendReachable = false;
+        console.warn("Order backend not reachable, falling back to a client-only order:", err);
+      }
+
+      saveBtn.disabled = false;
+      saveBtn.innerHTML = originalLabel;
+
+      // A real, reachable backend rejected the order (e.g. stock ran out
+      // between page load and checkout) — show its message, keep the cart.
+      if (backendReachable && serverResult && serverResult.error) {
+        alert(`Couldn't place order:\n${serverResult.message}`);
+        syncProductsFromServer(); // pull fresh stock so the UI reflects reality
+        return;
+      }
+
+      // ✅ Generate Order Number — from the server if we reached it,
+      // otherwise a client-side one so the demo still works standalone.
+      let orderNo = (backendReachable && serverResult && serverResult.orderNo)
+        ? serverResult.orderNo
+        : "ORD-" + Date.now();
+
+      const total = document.getElementById("total").innerText;
+      const paymentLabels = { cod: "Cash on Delivery (COD)" };
+      const paymentLabel = paymentLabels[selectedPaymentMethod] || selectedPaymentMethod;
+
+      // ✅ Order Data Object
+      let order = {
+        orderNo,
+        name,
+        mobile,
+        address: fullAddress,
+        addressTag: selectedAddressTag || "N/A",
+        paymentMethod: selectedPaymentMethod,
+        paymentLabel,
+        items: cart,
+        total,
+        date: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }),
+        source: backendReachable ? "mysql backend" : "client-only (backend unreachable)"
+      };
+
+      console.log(order); // backend ke liye ready
+
+      // Hand the order off to the confirmation page (survives the redirect, cleared on tab close).
+      sessionStorage.setItem("lastOrder", JSON.stringify(order));
+
+      // reset the cart/form before leaving so a "back" navigation doesn't show a stale cart
+      clearForm();
+      cart = {};
+      save();
+
+      window.location.href = "order-confirmation.html";
+    }
+
+    function clearForm() {
+      document.querySelectorAll("#orderModal input").forEach(input => {
+        input.value = "";
+        input.dataset.touched = "";
+        input.classList.remove("d-invalid");
+      });
+      document.querySelectorAll("#orderModal .d-error").forEach(el => { el.textContent = ""; });
+
+      const citySel = document.getElementById("city");
+      document.getElementById("province").value = "";
+      citySel.innerHTML = '<option value="">Please choose your province first</option>';
+      citySel.disabled = true;
+      resetAreaField("Please choose your city first");
+
+      selectedAddressTag = "";
+      document.querySelectorAll(".d-tag").forEach((btn) => btn.classList.remove("active"));
+
+      selectPaymentMethod("cod");
+    }
+
+    function closeModal() {
+      document.getElementById("orderModal").style.display = "none";
+    }
+
+    // ===== PRODUCT QUICK VIEW MODAL =====
+    let activeProductId = null;
+    let activeImageIdx = 0;
+    let activeGalleryImages = ["", "", "", ""];
+
+    function firstGallerySrc(imgs) {
+      const g = normalizeToFour(imgs);
+      const hit = g.find((s) => s && String(s).trim());
+      return hit || "images/main-banner1.jpg";
+    }
+
+    function revealProductExtraThumbs() {
+      const extra = document.getElementById("pmExtraThumbs");
+      const hint = document.getElementById("pmGalleryHint");
+      if (extra) extra.classList.remove("pm-extra-thumbs-hidden");
+      if (hint) hint.classList.add("pm-gallery-hint-hidden");
+    }
+
+    function wirePmMainReveal() {
+      const wrap = document.getElementById("pmMainWrap");
+      if (!wrap || wrap.dataset.revealWired === "1") return;
+      wrap.dataset.revealWired = "1";
+      wrap.addEventListener("click", (e) => {
+        e.preventDefault();
+        const extra = document.getElementById("pmExtraThumbs");
+        if (extra && extra.classList.contains("pm-extra-thumbs-hidden")) revealProductExtraThumbs();
+        else setActiveProductImage(0);
+      });
+      wrap.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const extra = document.getElementById("pmExtraThumbs");
+          if (extra && extra.classList.contains("pm-extra-thumbs-hidden")) revealProductExtraThumbs();
+          else setActiveProductImage(0);
+        }
+      });
+    }
+
+    function openProductModal(productId) {
+      if (!products[productId]) return;
+      const p = getProduct(productId);
+
+      activeProductId = productId;
+      activeImageIdx = 0;
+      activeGalleryImages = normalizeToFour(p.images);
+
+      const modal = document.getElementById("productModal");
+      const mainImg = document.getElementById("pmMainImg");
+      const extraThumbs = document.getElementById("pmExtraThumbs");
+      const hint = document.getElementById("pmGalleryHint");
+      const title = document.getElementById("pmTitle");
+      const desc = document.getElementById("pmDesc");
+      const price = document.getElementById("pmPrice");
+      const addBtn = document.getElementById("pmAddBtn");
+
+      title.textContent = p.name;
+      desc.textContent = p.desc || "Handmade with love by neurodiverse creators.";
+      price.textContent = typeof p.price === "number" ? `PKR ${p.price}` : "PKR";
+
+      const stock = typeof p.stock === "number" ? p.stock : 0;
+      const s = stockInfo(stock);
+      const stockEl = document.getElementById("pmStock");
+      if (stockEl) {
+        stockEl.textContent = s.label;
+        stockEl.className = `stock-badge ${s.cls}`;
+      }
+      addBtn.disabled = stock <= 0;
+      addBtn.classList.toggle("btn-disabled", stock <= 0);
+      addBtn.innerHTML = stock <= 0
+        ? `Out of Stock <i class="bi bi-slash-circle"></i>`
+        : `Add to Bag <i class="bi bi-bag-plus"></i>`;
+
+      const wishBtn = document.getElementById("pmWishBtn");
+      if (wishBtn) {
+        const setWishBtnState = () => {
+          const active = isWished(productId);
+          wishBtn.classList.toggle("active", active);
+          wishBtn.setAttribute("aria-pressed", active ? "true" : "false");
+          wishBtn.innerHTML = active ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>';
+        };
+        setWishBtnState();
+        wishBtn.onclick = () => {
+          toggleWish(productId);
+          setWishBtnState();
+        };
+      }
+
+      if (hint) {
+        hint.classList.remove("pm-gallery-hint-hidden");
+        hint.style.display = "";
+      }
+      if (extraThumbs) {
+        extraThumbs.classList.add("pm-extra-thumbs-hidden");
+        extraThumbs.innerHTML = "";
+        for (let idx = 1; idx <= 3; idx++) {
+          const src = activeGalleryImages[idx];
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "pm-thumb";
+          btn.setAttribute("aria-label", src ? `View image ${idx + 1}` : `Image ${idx + 1} — add path in catalog when ready`);
+          if (src) {
+            btn.innerHTML = `<img src="${src}" alt="${p.name} thumbnail ${idx + 1}" />`;
+            btn.addEventListener("click", () => setActiveProductImage(idx));
+          } else {
+            btn.classList.add("pm-thumb-empty");
+            btn.disabled = true;
+            btn.setAttribute("aria-disabled", "true");
+          }
+          extraThumbs.appendChild(btn);
+        }
+      }
+
+      wirePmMainReveal();
+
+      mainImg.src = firstGallerySrc(activeGalleryImages);
+      mainImg.alt = p.name;
+      syncExtraThumbActiveState();
+
+      // Add-to-bag action
+      addBtn.onclick = () => {
+        if (stock <= 0) return;
+        add(productId);
+        closeProductModal();
+      };
+
+      // Show modal
+      modal.style.display = "flex";
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      setTimeout(() => addBtn.focus(), 0);
+    }
+
+    function syncExtraThumbActiveState() {
+      document.querySelectorAll("#pmExtraThumbs .pm-thumb").forEach((t, i) => {
+        const idx = i + 1;
+        t.classList.toggle("active", idx === activeImageIdx);
+      });
+    }
+
+    function setActiveProductImage(idx) {
+      if (!Number.isFinite(idx) || idx < 0 || idx > 3) return;
+      let src = activeGalleryImages[idx];
+      if (!src || !String(src).trim()) {
+        if (idx !== 0) return;
+        src = firstGallerySrc(activeGalleryImages);
+      }
+      activeImageIdx = idx;
+      const mainImg = document.getElementById("pmMainImg");
+      const p = getProduct(activeProductId);
+      mainImg.src = src;
+      if (p) mainImg.alt = p.name;
+      syncExtraThumbActiveState();
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById("productModal");
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      activeProductId = null;
+      activeImageIdx = 0;
+      activeGalleryImages = ["", "", "", ""];
+    }
+
+    // Open modal by clicking on product cards (but not on add buttons)
+    document.addEventListener("click", (e) => {
+      const isAdd =
+        e.target.closest(".add-btn") ||
+        e.target.closest(".card-add-btn") ||
+        e.target.closest(".quantity") ||
+        e.target.closest(".cart-btn") ||
+        e.target.closest(".btn-primary-sc");
+      if (isAdd) return;
+
+      const card = e.target.closest(".product-card[data-id], .pop-card[data-id], .offer-card[data-id], .best-img-wrap[data-id]");
+      if (!card) return;
+
+      const id = Number(card.getAttribute("data-id"));
+      if (!Number.isFinite(id)) return;
+
+      openProductModal(id);
+    });
+
+    // Keyboard open for best seller image (Enter/Space)
+    document.querySelectorAll(".best-img-wrap[data-id]").forEach((el) => {
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const id = Number(el.getAttribute("data-id"));
+          if (Number.isFinite(id)) openProductModal(id);
+        }
+      });
+    });
+
+    // Close on backdrop click + ESC
+    document.getElementById("productModal").addEventListener("click", (e) => {
+      if (e.target.id === "productModal") closeProductModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const pm = document.getElementById("productModal");
+        if (pm && pm.style.display === "flex") closeProductModal();
+      }
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        if (!activeProductId) return;
+        const filled = [0, 1, 2, 3].filter((i) => activeGalleryImages[i] && String(activeGalleryImages[i]).trim());
+        if (filled.length < 2) return;
+        const pos = filled.indexOf(activeImageIdx);
+        const nextPos =
+          e.key === "ArrowRight"
+            ? (pos + 1) % filled.length
+            : (pos - 1 + filled.length) % filled.length;
+        setActiveProductImage(filled[nextPos]);
+      }
+    });
+
+    //  SLICK SLIDER (if available) 
+    if (typeof $ !== 'undefined' && $.fn.slick) {
+      $('.main-slider').slick({
+        slidesToShow: 1, slidesToScroll: 1, autoplay: true, autoplaySpeed: 5000,
+        prevArrow: '.slider-btn.prev', nextArrow: '.slider-btn.next', fade: true
+      });
+    }
+
+    // Reflect saved wishlist count/state on load
+    renderWishlist();
+    hydrateWishlistFromServer();
+
+  </script>
+
+</body>
+
+</html>

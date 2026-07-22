@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed — Spectrum Creations</title>
+
+<style>
+/* =========================================
+   RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   BODY
+========================================= */
+body {
+    min-height: 100vh;
+    background: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: #222;
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+.order-card {
+    width: 100%;
+    max-width: 700px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   SUCCESS ICON
+========================================= */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: #eaf6fb;
+    color: #2d97b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-icon svg {
+    width: 42px;
+    height: 42px;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #737373;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   CUSTOMER GREETING
+========================================= */
+.customer-name {
+    color: #2d97b9;
+    font-weight: bold;
+}
+
+/* =========================================
+   ORDER DETAILS
+========================================= */
+.order-details {
+    width: 100%;
+    margin: 0 auto 25px;
+    padding: 25px;
+    background: #fafafa;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+.section-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* =========================================
+   DETAIL ROW
+========================================= */
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   LABEL
+========================================= */
+.label {
+    color: #737373;
+    font-size: 14px;
+    min-width: 140px;
+}
+
+/* =========================================
+   VALUE
+========================================= */
+.value {
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* =========================================
+   ORDER NUMBER
+========================================= */
+.order-number {
+    font-family: "Courier New", monospace;
+    color: #333;
+}
+
+/* =========================================
+   TOTAL
+========================================= */
+.total-row {
+    margin-top: 10px;
+    padding-top: 18px;
+    border-top: 2px solid #ddd;
+}
+
+.total-row .label {
+    color: #222;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total-row .value {
+    color: #2d97b9;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* =========================================
+   DELIVERY BOX
+========================================= */
+.delivery-box {
+    background: #eef7fa;
+    border: 1px solid #d6ecf3;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.delivery-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2d97b9;
+    margin-bottom: 8px;
+}
+
+.delivery-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* PRINT */
+.print-button {
+    background: white;
+    color: #2d97b9;
+    border: 1px solid #2d97b9;
+}
+
+.print-button:hover {
+    background: #eaf6fb;
+}
+
+/* SCREENSHOT */
+.screenshot-button {
+    background: #333;
+    color: white;
+    border: 1px solid #333;
+}
+
+.screenshot-button:hover {
+    background: #111;
+}
+
+/* CONTINUE */
+.continue-button {
+    background: #2d97b9;
+    color: white;
+    border: 1px solid #2d97b9;
+}
+
+.continue-button:hover {
+    background: #1f7a97;
+}
+
+/* =========================================
+   PRINT STYLE
+========================================= */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .order-card {
+        max-width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+
+    .buttons {
+        display: none;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .order-card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .label {
+        min-width: auto;
+    }
+
+    .value {
+        text-align: left;
+    }
+
+    .total-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .total-row .value {
+        text-align: right;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================
+     ORDER CONFIRMATION
+========================================= -->
+<div class="order-card" id="orderCard">
+
+    <!-- SUCCESS -->
+    <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="m9 12 2 2 4-4"></path>
+        </svg>
+    </div>
+
+    <!-- TITLE -->
+    <h1>Order Confirmed!</h1>
+
+    <!-- CUSTOMER MESSAGE -->
+    <p class="description">
+        Thank you, <span class="customer-name" id="greetName">there</span>!
+        Your order has been successfully placed.
+    </p>
+
+    <!-- ORDER INFORMATION -->
+    <div class="order-details">
+
+        <div class="section-title">Order Information</div>
+
+        <!-- ORDER NUMBER -->
+        <div class="detail-row">
+            <span class="label">Order Number</span>
+            <span class="value order-number" id="valOrderNumber">—</span>
+        </div>
+
+        <!-- ORDER DATE -->
+        <div class="detail-row">
+            <span class="label">Order Date</span>
+            <span class="value" id="valOrderDate">—</span>
+        </div>
+
+        <!-- CUSTOMER -->
+        <div class="detail-row">
+            <span class="label">Customer Name</span>
+            <span class="value" id="valCustomerName">—</span>
+        </div>
+
+        <!-- PHONE -->
+        <div class="detail-row">
+            <span class="label">Phone Number</span>
+            <span class="value" id="valPhone">—</span>
+        </div>
+
+        <!-- PAYMENT -->
+        <div class="detail-row">
+            <span class="label">Payment Method</span>
+            <span class="value" id="valPayment">—</span>
+        </div>
+
+        <!-- DELIVERY -->
+        <div class="detail-row">
+            <span class="label">Delivery Method</span>
+            <span class="value">Standard Delivery</span>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="detail-row total-row">
+            <span class="label">Total Amount</span>
+            <span class="value" id="valTotal">—</span>
+        </div>
+
+    </div>
+
+    <!-- =========================================
+         DELIVERY ADDRESS
+    ========================================== -->
+    <div class="delivery-box">
+        <div class="delivery-title">📦 Delivery Address</div>
+        <div class="delivery-text">
+            <strong id="addrName">—</strong>
+            <br>
+            <span id="addrPhone">—</span>
+            <br>
+            <span id="addrText">—</span>
+        </div>
+    </div>
+
+    <!-- =========================================
+         BUTTONS
+    ========================================== -->
+    <div class="buttons">
+        <button class="print-button" onclick="window.print()">🖨️ Print / Save PDF</button>
+        <button class="screenshot-button" onclick="downloadScreenshot()">📷 Download Screenshot</button>
+        <button class="continue-button" onclick="continueShopping()">Continue Shopping</button>
+    </div>
+
+</div>
+
+<!-- =========================================
+     HTML2CANVAS
+========================================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+  // ===== Load the order that placeOrder() saved just before redirecting here =====
+  let order = null;
+  try {
+    order = JSON.parse(sessionStorage.getItem("lastOrder"));
+  } catch (e) {
+    order = null;
+  }
+
+  // No order data (e.g. page opened directly / refreshed after being cleared) — send back to the shop.
+  if (!order || !order.orderNo) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("greetName").textContent = order.name || "there";
+    document.getElementById("valOrderNumber").textContent = order.orderNo;
+    document.getElementById("valOrderDate").textContent = order.date || "";
+    document.getElementById("valCustomerName").textContent = order.name || "";
+    document.getElementById("valPhone").textContent = order.mobile || "";
+    document.getElementById("valPayment").textContent = order.paymentLabel || order.paymentMethod || "";
+    document.getElementById("valTotal").textContent = "PKR " + (order.total ?? "0");
+
+    document.getElementById("addrName").textContent = order.name || "";
+    document.getElementById("addrPhone").textContent = order.mobile || "";
+    document.getElementById("addrText").textContent = order.address || "";
+
+    document.title = `Order ${order.orderNo} Confirmed — Spectrum Creations`;
+  }
+
+  /* =========================================
+     DOWNLOAD SCREENSHOT
+  ========================================= */
+  function downloadScreenshot() {
+    const card = document.getElementById("orderCard");
+    html2canvas(card, {
+      backgroundColor: "#ffffff",
+      scale: 2
+    }).then(function (canvas) {
+      const link = document.createElement("a");
+      link.download = `Order-Confirmation-${(order && order.orderNo) || "order"}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  }
+
+  /* =========================================
+     CONTINUE SHOPPING
+  ========================================= */
+  function continueShopping() {
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

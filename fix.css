@@ -1,0 +1,42 @@
+/* FORCE FIX - ADD THIS TO YOUR HTML <head> AFTER all other CSS */
+
+/* Remove ALL top margins from everything */
+* {
+    margin-top: 0 !important;
+}
+
+/* Specifically fix the slider */
+.main-slider, 
+.slick-slider, 
+.slick-list,
+.slider-item,
+#billboard .main-slider,
+.slick-initialized {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix header */
+.modern-header, 
+#header, 
+#header-wrap,
+.top-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+}
+
+/* Fix body */
+body, html {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Fix the specific 70px margin issue */
+@media screen and (max-width: 767px) {
+    #billboard .main-slider {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}

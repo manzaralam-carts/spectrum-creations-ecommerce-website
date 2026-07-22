@@ -1,0 +1,21 @@
+# ===== Spectrum Creations — routing & error handling =====
+
+# Serve a proper, on-brand page instead of the server's default
+# generic 404 whenever a URL or asset can't be found.
+ErrorDocument 404 /404.html
+
+# Optional: keep 500s from leaking a bare server error page too.
+# Point this at a real 500.html if/when one exists — omitted for now
+# since only the 404 page was requested.
+# ErrorDocument 500 /500.html
+
+# ----- Clean URLs (optional) -----
+# Lets visitors use /offers instead of /index.html#special-offer, etc.,
+# without breaking anything if the exact file already exists.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^([^.]+)$ $1.html [NC,L]
+</IfModule>

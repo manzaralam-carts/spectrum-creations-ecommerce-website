@@ -1,0 +1,20 @@
+# Defense in depth: even though media.php only accepts real JPG/PNG/
+# WEBP/GIF bytes (checked with finfo, not the filename) and saves them
+# under randomly generated names, this makes sure nothing in this
+# folder can ever be executed as PHP even if that check were ever
+# bypassed or misconfigured.
+<IfModule mod_php7.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+  php_flag engine off
+</IfModule>
+<FilesMatch "\.(php|phtml|php\d?)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
