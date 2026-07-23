@@ -8,6 +8,8 @@ USE ecommerce_db;
 
 INSERT IGNORE INTO categories (name, slug, status) VALUES
   ('Canvas Art', 'canvas-art', 'active'),
+  ('Culinary', 'culinary', 'active'),
+  ('Electronics', 'electronics', 'active'),
   ('Jewellery', 'jewellery', 'active'),
   ('Lifestyle Accessories', 'lifestyle-accessories', 'active'),
   ('Money Jars', 'money-jars', 'active'),

@@ -53,7 +53,7 @@ registerPage('products', async (root) => {
       { name: 'status', label: 'Status', type: 'select', options: [
         { value: 'active', label: 'Active' }, { value: 'draft', label: 'Draft' }, { value: 'archived', label: 'Archived' },
       ]},
-      { name: 'image', label: 'Image URL', hint: 'Paste a URL, or upload via Media Library and paste the path here' },
+      { name: 'image', label: 'Image', type: 'image', hint: 'Uploads to your Media Library automatically — or paste a URL/path instead.' },
       { name: 'description', label: 'Description', type: 'textarea' },
     ],
   });

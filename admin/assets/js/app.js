@@ -339,8 +339,9 @@ class CrudView {
         <button class="btn btn-ghost" data-cancel>Cancel</button>
         <button class="btn btn-primary" data-save>${row ? 'Save changes' : 'Create'}</button>`,
       onMount: (el) => {
-        el.querySelector('[data-cancel]').addEventListener('click', close);
+        el.querySelector('[data-cancel]').addEventListener('click', () => close());
         el.querySelector('[data-save]').addEventListener('click', () => this.submitForm(el, row, close));
+        this.wireImageFields(el);
       },
     });
   }
@@ -356,10 +357,78 @@ class CrudView {
       </select>`;
     } else if (f.type === 'textarea') {
       input = `<textarea name="${f.name}" ${req} data-field="${f.name}" rows="${f.rows || 4}">${escapeHtml(val)}</textarea>`;
+    } else if (f.type === 'image') {
+      // Hidden field holds the actual path/URL that gets submitted — same
+      // contract as a plain text field, so submitForm() needs no changes.
+      // The visible bits (file picker + preview + URL fallback) just drive
+      // that hidden field's value.
+      input = `
+        <div class="image-field" data-image-field="${f.name}">
+          <div class="image-field-preview" data-preview style="${val ? '' : 'display:none'}">
+            <img data-preview-img src="${escapeHtml(val)}" onerror="this.parentElement.style.display='none'" alt="">
+          </div>
+          <input type="hidden" name="${f.name}" ${req} data-field="${f.name}" value="${escapeHtml(val)}">
+          <label class="image-field-dropzone" data-image-dropzone>
+            ${icon('upload', 20)}
+            <span data-image-status>${val ? 'Change image' : 'Click to choose an image, or drop one here'}</span>
+            <input type="file" accept="image/jpeg,image/png,image/webp,image/gif" data-image-input style="display:none">
+          </label>
+          <div class="hint">Or paste a URL / existing media path instead:</div>
+          <input type="text" data-image-url-fallback value="${escapeHtml(val)}" placeholder="images/example.jpg or https://…">
+        </div>`;
     } else {
       input = `<input type="${f.type || 'text'}" name="${f.name}" ${req} data-field="${f.name}" value="${escapeHtml(val)}" ${f.step ? `step="${f.step}"` : ''}>`;
     }
     return `<div class="field" data-field-wrap="${f.name}"><label>${escapeHtml(f.label)}</label>${input}${f.hint ? `<div class="hint">${escapeHtml(f.hint)}</div>` : ''}</div>`;
+  }
+
+  wireImageFields(modalEl) {
+    modalEl.querySelectorAll('[data-image-field]').forEach((wrap) => {
+      const hidden = wrap.querySelector('[data-field]');
+      const fileInput = wrap.querySelector('[data-image-input]');
+      const dropzone = wrap.querySelector('[data-image-dropzone]');
+      const status = wrap.querySelector('[data-image-status]');
+      const preview = wrap.querySelector('[data-preview]');
+      const previewImg = wrap.querySelector('[data-preview-img]');
+      const urlFallback = wrap.querySelector('[data-image-url-fallback]');
+
+      function setValue(path) {
+        hidden.value = path;
+        if (path) {
+          previewImg.src = path;
+          preview.style.display = '';
+          status.textContent = 'Change image';
+        } else {
+          preview.style.display = 'none';
+          status.textContent = 'Click to choose an image, or drop one here';
+        }
+        urlFallback.value = path;
+      }
+
+      async function handleFile(file) {
+        status.textContent = 'Uploading…';
+        try {
+          const fd = new FormData();
+          fd.append('file', file);
+          const res = await Api.upload('media.php', fd);
+          setValue(res.data.path);
+          toast('Image uploaded', 'success');
+        } catch (e) {
+          toast(e.message, 'error');
+          status.textContent = hidden.value ? 'Change image' : 'Click to choose an image, or drop one here';
+        }
+      }
+
+      fileInput.addEventListener('change', () => { if (fileInput.files[0]) handleFile(fileInput.files[0]); });
+      dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('drag'); });
+      dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('drag');
+        if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+      });
+      urlFallback.addEventListener('input', () => setValue(urlFallback.value));
+    });
   }
 
   async submitForm(modalEl, row, close) {

@@ -146,7 +146,7 @@ async function openOrderDetail(id, onChange) {
     `,
     footHtml: `<button class="btn btn-ghost" data-cancel>Close</button><button class="btn btn-primary" data-save>Update status</button>`,
     onMount: (el) => {
-      el.querySelector('[data-cancel]').addEventListener('click', close);
+      el.querySelector('[data-cancel]').addEventListener('click', () => close());
       el.querySelector('[data-save]').addEventListener('click', async () => {
         const status = el.querySelector('#statusSelect').value;
         try {

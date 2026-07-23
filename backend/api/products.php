@@ -9,9 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 try {
     $stmt = $pdo->query(
-        "SELECT id, name, description, price, image, stock
-         FROM products
-         ORDER BY id"
+        "SELECT p.id, p.name, p.description, p.price, p.image, p.stock, c.name AS category
+         FROM products p
+         LEFT JOIN categories c ON c.id = p.category_id
+         ORDER BY p.id"
     );
     $products = $stmt->fetchAll();
 

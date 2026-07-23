@@ -1334,7 +1334,9 @@
       const allPanel = document.getElementById('allCollections');
       if (!input || !allPanel) return;
 
-      const cards = Array.from(allPanel.querySelectorAll('.product-card'));
+      function getCards() {
+        return Array.from(allPanel.querySelectorAll('.product-card'));
+      }
 
       function currentQuery() {
         return {
@@ -1357,7 +1359,7 @@
         }
 
         let visible = 0;
-        cards.forEach(card => {
+        getCards().forEach(card => {
           if (!searching) {
             card.style.display = '';
             visible++;
@@ -1821,6 +1823,98 @@
     // (only when unreachable) in a small dismissible on-page notice, so
     // "why isn't data saving to the database" is actually diagnosable
     // without needing DevTools open. ----
+    // Maps a category name to its dedicated tab panel's grid, if one exists,
+    // so a new admin-added product shows up there too — not just in the
+    // catch-all "All Collections" tab.
+    const CATEGORY_TAB_IDS = {
+      'Plaster of Paris': 'plasterOfParis',
+      'Money Jars': 'moneyJars',
+      'Paper Clay': 'paperClay',
+      'Jewellery': 'jewellery',
+      'Tote Bags': 'toteBags',
+      'T-Shirts': 'tShirts',
+      'Canvas Art': 'canvasArt',
+      'Wall Hangings': 'wallHangings',
+      'Lifestyle Accessories': 'lifestyleAccessories',
+      'Culinary': 'culinary',
+      'Electronics': 'electronics'
+    };
+
+    // Images uploaded through the admin panel's upload widget are stored
+    // under admin/uploads/media/ (relative to the /admin folder, which is
+    // correct for the admin panel's own pages) — but the storefront lives
+    // at the site root, so that same path needs an "admin/" prefix to
+    // resolve there. Pre-existing seeded images (paths starting with
+    // "images/") are already root-relative and are left alone.
+    function resolveStorefrontImagePath(img) {
+      if (!img) return '';
+      if (/^https?:\/\//i.test(img)) return img;
+      if (img.startsWith('uploads/')) return 'admin/' + img;
+      return img;
+    }
+
+    // Builds a real card for a product that exists in the database but has
+    // no matching hand-written card in the HTML — i.e. one created via the
+    // admin panel after this page was built. Without this, admin-added
+    // products would only ever show up in the admin panel, never on the
+    // actual storefront.
+    function renderNewProductCard(row) {
+      const grid = document.querySelector('#allCollections .products-grid');
+      if (!grid) return;
+
+      const category = row.category || 'Uncategorized';
+      const img = resolveStorefrontImagePath(row.image || '');
+      const desc = row.description || 'Handmade with love by neurodiverse creators.';
+
+      function buildCardEl() {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.dataset.category = category;
+        card.dataset.id = row.id;
+        card.innerHTML = `
+          <figure class="product-style">
+            <img src="${img}" alt="${escapeHtmlFc(row.name)}" class="product-item">
+            <button class="card-add-btn">Add to Bag</button>
+          </figure>
+          <figcaption>
+            <h4>${escapeHtmlFc(row.name)}</h4>
+            <span>${escapeHtmlFc(desc)}</span>
+            <div class="item-price">PKR ${row.price}</div>
+          </figcaption>`;
+        return card;
+      }
+
+      const mainCard = buildCardEl();
+      grid.appendChild(mainCard);
+
+      upsertProduct({
+        id: row.id,
+        name: row.name,
+        price: row.price,
+        stock: row.stock,
+        desc,
+        images: img ? [img] : []
+      });
+      wireAddButtons(mainCard, row.id);
+      wireCardExtras(mainCard, row.id);
+
+      // Also drop a copy into this category's own tab, if it has one.
+      const tabId = CATEGORY_TAB_IDS[category];
+      if (tabId) {
+        const tabGrid = document.querySelector(`#${tabId} .products-grid`);
+        if (tabGrid) {
+          const tabCard = buildCardEl();
+          tabGrid.appendChild(tabCard);
+          wireAddButtons(tabCard, row.id);
+          wireCardExtras(tabCard, row.id);
+        }
+      }
+    }
+
+    function escapeHtmlFc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
     async function syncProductsFromServer() {
       try {
         let res;
@@ -1846,7 +1940,10 @@
         }
 
         json.data.forEach((row) => {
-          if (!products[row.id]) return; // DB has a product the page doesn't render — ignore it here
+          if (!products[row.id]) {
+            renderNewProductCard(row);
+            return;
+          }
           if (products[row.id].isOffer) {
             // Offer cards show a special discounted price the database doesn't
             // know about — only refresh stock for these, keep the offer price.
